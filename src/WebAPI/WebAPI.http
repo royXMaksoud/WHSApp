@@ -1,0 +1,82 @@
+@WebAPI_HostAddress = https://localhost:5271
+@token=CfDJ8AvM4dwOKzhDgW7b3Kxm8XWDSRaLzh2ulj7WhHgez-dPdd-1crDMM3-SZHjh50wpR2WAO4zQeQXqXI_3uLAI0LPoFgVaDLX-6Ikyg3KgNqq0e2KdWiFrtb9rneXMvDvbDTtoFosUzsoGVtgK_IP98qQ2OQE_1DdSl_GBxvTnDDneCv_DIDKoD5ffzz_0j0bMmYCMEK7_FtKM9TmOCiU_e5ePDPjjkQMhc4qLyoj_bBt8d6wdzvqezNyCEhhdykbuQQLzouwkQ7amc3iNFFCx4mq_QKOxzfjJIQjrMZn2cPeokydcTwgQeJ9OsJZFF0_1nx7hmPqWAjh_W1DsrZK_zo2zW_DKR8S6MZ5HJ7hYDrS6vQiZ8D07T23W9YYqXH8Nut7Jsw01uA9BGIgTVIFeH9I1TifH80zg8umIAjtf7hTuuQ2hxh79H_F7-p9bEuylK8B4KXkPrq_Rhi52NkK4Y4AsniwT7sOsR7_TOSXw_ihoDNraIkgwpsWAL5sNIr63RXQ3Ci1dgO8dDJTGjn4BFmBCIwev3yjIRBBLqBHtTXLIJ6x81ZJyJeEl6zokmfUlWhtBMq27ejdACeBc2256zAVasWAXkFfXEMU-oDJHWWd-38n-Z0uG4xB8LebBsJ_PDbeiUSGKDCW2kHYidgAq03636LNt3yLMbAEXHpX-jEkBW4MlBwoSNnkRgNEeDo92UVSD2O-aZ8hbZzFA7j6f384BWY3lukYC2wTfBRbRek-XViuLAhjsJMx9k46tX7HjZs4h98CjXuloKahK_UTtbKMGxjBKPPWXmHvejsRUWk68oFZjTw9iT56v7KWE0Dz-8y8QkaZ-V7ds2h6jsqFeEBMMhnD-YsTUBiaKLwMPlHxii5hALTYkJoXENg-1CP7kFw
+###
+
+GET {{WebAPI_HostAddress}}/api/warehouse/GetAll?pageSize=5&pageNumber=10
+# Authorization: Bearer {{token}}
+
+###
+
+GET {{WebAPI_HostAddress}}/api/warehouse/90266a3c-8cec-4a20-8be7-4faf991d9f5c
+
+###
+
+
+POST {{WebAPI_HostAddress}}/api/warehouse
+Content-Type: application/json
+
+
+{
+  
+  "warehouseName": "Central warehouse",
+  "DutyStationId": "90266A3C-8CEC-4A20-8BE7-4FAF991D9F5C",
+  "BranchId": "90266A3C-8CEC-4A20-8BE7-4FAF991D9F5C",
+  "BranchName": "Main Branch",
+  "DutyStationName": "Berlin"
+}
+###
+
+DELETE {{WebAPI_HostAddress}}/api/warehouse/d13e32ae-8fae-4e54-b217-0003048c27db
+
+###
+
+PATCH {{WebAPI_HostAddress}}/api/warehouse/90266A3C-8CEC-4A20-8BE7-4FAF991D9F5C
+Content-Type: application/json
+{
+  "warehouseName":"Ber-Main"
+}
+
+
+
+###
+
+POST {{WebAPI_HostAddress}}/api/product/F2BB1934-412F-4B63-CD14-08DD66C268DD/InventoryItem
+Content-Type: application/json
+
+{
+  "warehouseId":"F18407AE-CD30-4B1F-1437-08DD6609D0C8",
+  "Quantity":1,
+  "UnitPrice":1
+}
+
+###
+
+@productId=F2BB1934-412F-4B63-CD14-08DD66C268DD
+@inventoryItemId=73C53E3A-0D8B-406F-940D-08DD66F263E1
+GET {{WebAPI_HostAddress}}/api/product/{{productId}}/InventoryItem/
+
+###
+
+GET {{WebAPI_HostAddress}}/api/product/F2BB1934-412F-4B63-CD14-08DD66C268D6/InventoryItem
+
+###
+
+DELETE {{WebAPI_HostAddress}}/api/product/F2BB1934-412F-4B63-CD14-08DD66C268DD/InventoryItem
+
+###
+POST {{WebAPI_HostAddress}}/api/identity/register
+Content-Type: application/json
+{
+  "email":"user@test.com",
+ 
+  "password": "P@ssw0rd"
+}
+
+###
+POST {{WebAPI_HostAddress}}/api/identity/login
+Content-Type: application/json
+{
+  "email":"roy000222@gmail.com",
+ 
+  "password": "P@ssw0rd"
+}
