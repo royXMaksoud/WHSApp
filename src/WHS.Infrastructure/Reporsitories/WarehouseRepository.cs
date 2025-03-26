@@ -27,42 +27,64 @@ internal class WarehouseRepository(WarehouseDbContext dbContext) : IWarehouseRep
         return warehouses;
     }
 
-    public async Task<(IEnumerable<Warehouse>, int)> GetAllMatchingAsync(string? searchPhrase,
-                                                                     int pageSize,
-                                                                     int pageNumber,
-                                                                     string sortBy,
-                                                                     SortDirection sortDirection)
+    public async Task<(IEnumerable<Warehouse>, int)> GetAllMatchingAsync(
+        string? searchPhrase,
+        int pageSize,
+        int pageNumber,
+        string? sortBy,
+        SortDirection sortDirection)
     {
-        var baseQuery = dbContext.Warehouses.Where(x => searchPhrase == null ||
-                                                                            (x.WarehouseName.ToLower().Contains(searchPhrase)));
-
-        var totalCount = await baseQuery.CountAsync();
-        if (sortBy != null)
+        try
         {
-            var columnsSelector = new Dictionary<string, Expression<Func<Warehouse, object>>>
+            // Build the base query with search phrase filtering
+            var baseQuery = dbContext.Warehouses.AsQueryable();
+
+            if (!string.IsNullOrEmpty(searchPhrase))
             {
-                    { nameof(Warehouse.WarehouseName),r=>r.WarehouseName },
-                     { nameof(Warehouse.DutyStation),r=>r.DutyStation },
-            };
-            var selectedColumn = columnsSelector[sortBy];
-            baseQuery = sortDirection == SortDirection.Ascending ? baseQuery.OrderBy(selectedColumn) : baseQuery.OrderByDescending(selectedColumn);
+                var searchPhraseLower = searchPhrase.ToLower(); // Only need to do this once
+                baseQuery = baseQuery.Where(x => x.WarehouseName.ToLower().Contains(searchPhraseLower));
+            }
+
+            // Get total count of filtered records
+            var totalCount = await baseQuery.CountAsync();
+
+            // Sorting logic
+            if (!string.IsNullOrEmpty(sortBy) && new Dictionary<string, Expression<Func<Warehouse, object>>>
+        {
+            { nameof(Warehouse.WarehouseName), r => r.WarehouseName },
+            { nameof(Warehouse.DutyStation), r => r.DutyStation }
+        }.TryGetValue(sortBy, out var sortExpression))
+            {
+                baseQuery = sortDirection == SortDirection.Ascending
+                    ? baseQuery.OrderBy(sortExpression)
+                    : baseQuery.OrderByDescending(sortExpression);
+            }
+
+            // Fetch the actual warehouses with paging
+            var warehouses = await baseQuery
+                .Skip(pageSize * (pageNumber - 1))
+                .Take(pageSize)
+                .ToListAsync();
+
+            return (warehouses, totalCount);
         }
-
-        var searchPhraseLower = searchPhrase?.ToLower();
-        var warehouses = await dbContext.Warehouses.Where(x => searchPhrase == null ||
-                                                                            (x.WarehouseName.ToLower().Contains(searchPhrase))
-                                                                   ).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
-        return (warehouses, totalCount);
+        catch (Exception ex)
+        {
+            // Log error if necessary, and throw a custom exception
+            // logger.LogError(ex, "Error occurred while fetching warehouses from the repository.");
+            throw new ApplicationException("Error occurred while fetching warehouses.", ex);
+        }
     }
-
-    public async Task<Warehouse> GetByIdAsync(Guid id)
+    public async Task<Warehouse?> GetByIdAsync(Guid id)
     {
         var warehouse = await dbContext.Warehouses
-            .Include(r => r.warehouseUsers)
+            .Include(r => r.warehouseUsers)  // Ensure this is necessary for performance
             .FirstOrDefaultAsync(x => x.WarehouseId == id);
 
-        return warehouse;
+        return warehouse;  // If not found, this will return null, which is valid due to `Warehouse?`
     }
+
+
 
     public Task SaveChanges() => dbContext.SaveChangesAsync();
 }

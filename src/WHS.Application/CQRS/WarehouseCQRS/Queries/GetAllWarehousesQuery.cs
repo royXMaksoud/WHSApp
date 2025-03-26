@@ -21,15 +21,27 @@ public class GetAllWarehousesQueryHandler(ILogger<GetAllWarehousesQueryHandler> 
 {
     public async Task<PageResult<WarehouseDto>> Handle(GetAllWarehousesQuery request, CancellationToken cancellationToken)
     {
-        logger.LogInformation("Getting all warehoues");
-        var (warehouses, totalCount) = await warehouseRepository.GetAllMatchingAsync(request.SearchPharse,
-            request.PageSize,
-            request.PageNumber,
-            request.SortBy,
-            request.SortDirection);
-        //var warehouseDto = warehouses.Select(WarehouseDto.FromEntity);
-        var warehouseDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
-        var result = new PageResult<WarehouseDto>(warehouseDtos, totalCount, request.PageSize, request.PageNumber);
-        return result!;
+        try
+        {
+            logger.LogInformation("Getting all warehouses");
+            var (warehouses, totalCount) = await warehouseRepository.GetAllMatchingAsync(request.SearchPharse,
+                request.PageSize,
+                request.PageNumber,
+                request.SortBy,
+                request.SortDirection);
+            //var warehouseDto = warehouses.Select(WarehouseDto.FromEntity);
+            var warehouseDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
+            var result = new PageResult<WarehouseDto>(warehouseDtos, totalCount, request.PageSize, request.PageNumber);
+            return result!;
+
+        }
+        catch (Exception ex)
+        {
+
+            logger.LogError(ex, "An error occurred while retrieving warehouses.");
+            // You can return a custom error result here, or rethrow the exception for the global error handling.
+            throw new ApplicationException("An error occurred while retrieving warehouses.", ex);
+        }
+       
     }
 }
