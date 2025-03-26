@@ -61,14 +61,14 @@ public class WarehouseProfileTests
             //OwnerId="90266a3c-8cec-4a20-8be7-4faf991d9f5c",
         };
         //act
-        var warehouse = _mapper.Map<Warehouse>(warehouse);
+        var warehouseMapp = _mapper.Map<Warehouse>(warehouse);
 
         //assert 
-        warehouse.Should().NotBeNull();
-       
-        warehouse.WarehouseName.Should().Be(warehouse.WarehouseName);
-        warehouse.DutyStationId.Should().Be(warehouse.DutyStationId);
-        warehouse.BranchId.Should().Be(warehouse.BranchId);
+        warehouseMapp.Should().NotBeNull();
+
+        warehouseMapp.WarehouseName.Should().Be(warehouse.WarehouseName);
+        warehouseMapp.DutyStationId.Should().Be(warehouse.DutyStationId);
+        warehouseMapp.BranchId.Should().Be(warehouse.BranchId);
 
     }
 
@@ -84,11 +84,11 @@ public class WarehouseProfileTests
       
         };
         //act
-        var warehouse = _mapper.Map<Warehouse>(warehouse);
+        var warehouseMapp = _mapper.Map<Warehouse>(warehouse);
 
         //assert 
-        warehouse.Should().NotBeNull();
-        warehouse.WarehouseName.Should().Be(warehouse.WarehouseName);
+        warehouseMapp.Should().NotBeNull();
+        warehouseMapp.WarehouseName.Should().Be(warehouse.WarehouseName);
 
 
     }
