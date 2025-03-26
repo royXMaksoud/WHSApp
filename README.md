@@ -1,4 +1,4 @@
-WarehouseApp - ASP.NET Core Application
+Warehouse Application - ASP.NET Core Application
 
 Overview
 
