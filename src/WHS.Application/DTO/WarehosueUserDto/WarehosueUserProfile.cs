@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using WHS.Domain.Entities.Code;
 
-public class WarehosueUserProfile : Profile
+public class warehouseUserProfile : Profile
 {
-    public WarehosueUserProfile()
+    public warehouseUserProfile()
     {
-        CreateMap<WarehosueUser, WarehosueUserDto>();
+        CreateMap<warehouseUser, warehouseUserDto>();
     }
 }

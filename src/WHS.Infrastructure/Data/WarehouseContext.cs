@@ -14,7 +14,7 @@ internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) 
     public DbSet<Branch> Branches { get; set; }
     public DbSet<Product> Products { get; set; }
     public DbSet<Warehouse> Warehouses { get; set; }
-    public DbSet<WarehosueUser> WarehosueUser { get; set; }
+    public DbSet<warehouseUser> warehouseUser { get; set; }
     public DbSet<InventoryItem> InventoryItems { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<OrderItem> OrderItems { get; set; }
@@ -153,12 +153,12 @@ internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) 
         //     .OnDelete(DeleteBehavior.Cascade);
 
         // Define primary key for WarehouseFocalPoint
-        modelBuilder.Entity<WarehosueUser>()
-            .HasKey(wfp => wfp.WarehosueUserId); // Define the primary key
+        modelBuilder.Entity<warehouseUser>()
+            .HasKey(wfp => wfp.warehouseUserId); // Define the primary key
 
         // Define relationship between WarehouseFocalPoint and Warehouse
-        modelBuilder.Entity<WarehosueUser>()
-            .HasOne(wfp => wfp.Warehosue)
+        modelBuilder.Entity<warehouseUser>()
+            .HasOne(wfp => wfp.warehouse)
             .WithMany() // Warehouse can have many WarehouseFocalPoints (if needed, you can define a collection on Warehouse)
             .HasForeignKey(wfp => wfp.WarehouseId) // Foreign Key is WarehouseId
             .OnDelete(DeleteBehavior.Cascade); // Define delete behavior

@@ -14,18 +14,18 @@ public class DeleteWarehouseCommand(Guid id) : IRequest
 }
 
 public class DeleteWarehouseCommandHandler(ILogger<DeleteWarehouseCommandHandler> logger,
-    IWarehouseRepository warehosueRepository,
+    IWarehouseRepository warehouseRepository,
     IWarehouseAuthorizationService wHSAuthorizationService) : IRequestHandler<DeleteWarehouseCommand>
 {
     public async Task Handle(DeleteWarehouseCommand request, CancellationToken cancellationToken)
     {
         logger.LogInformation($"Deleteting warehouse with id :{request.Id}");
-        var warehouse = await warehosueRepository.GetByIdAsync(request.Id);
+        var warehouse = await warehouseRepository.GetByIdAsync(request.Id);
         if (warehouse is null)
             throw new NotFoundException(nameof(Warehouse), request.Id.ToString());
         if (!wHSAuthorizationService.Authorize(warehouse, ResourceOperation.Delete))
             throw new ForbidException();
-        await warehosueRepository.Delete(warehouse);
+        await warehouseRepository.Delete(warehouse);
         //return true;
     }
 }

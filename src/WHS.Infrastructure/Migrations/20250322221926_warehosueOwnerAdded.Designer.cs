@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace WHS.Infrastructure.Migrations
 {
     [DbContext(typeof(WarehouseDbContext))]
-    [Migration("20250322221926_warehosueOwnerAdded")]
-    partial class warehosueOwnerAdded
+    [Migration("20250322221926_warehouseOwnerAdded")]
+    partial class warehouseOwnerAdded
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -349,9 +349,9 @@ namespace WHS.Infrastructure.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.WarehosueUser", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
                 {
-                    b.Property<Guid>("WarehosueUserId")
+                    b.Property<Guid>("warehouseUserId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -364,13 +364,13 @@ namespace WHS.Infrastructure.Migrations
                     b.Property<Guid?>("WarehouseId1")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("WarehosueUserId");
+                    b.HasKey("warehouseUserId");
 
                     b.HasIndex("WarehouseId");
 
                     b.HasIndex("WarehouseId1");
 
-                    b.ToTable("WarehosueUser");
+                    b.ToTable("warehouseUser");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
@@ -640,19 +640,19 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.WarehosueUser", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "Warehosue")
+                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "warehouse")
                         .WithMany()
                         .HasForeignKey("WarehouseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WHS.Domain.Entities.Code.Warehouse", null)
-                        .WithMany("WarehosueUsers")
+                        .WithMany("warehouseUsers")
                         .HasForeignKey("WarehouseId1");
 
-                    b.Navigation("Warehosue");
+                    b.Navigation("warehouse");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
@@ -787,7 +787,7 @@ namespace WHS.Infrastructure.Migrations
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
                 {
-                    b.Navigation("WarehosueUsers");
+                    b.Navigation("warehouseUsers");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.WHS.Order", b =>

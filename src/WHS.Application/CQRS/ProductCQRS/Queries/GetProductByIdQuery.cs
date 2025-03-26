@@ -23,7 +23,7 @@ namespace WHS.Application.CQRS.ProductCQRS.Queries
             var product = await productRepository.GetByIdAsync(request.Id);
             if (product is null)
                 throw new NotFoundException(nameof(product), request.Id.ToString());
-            //var warehouseDto = WarehouseDto.FromEntity(warehosue);
+            //var warehouseDto = WarehouseDto.FromEntity(warehouse);
             var productDto = mapper.Map<ProductDto?>(product);
             return productDto;
         }

@@ -15,22 +15,22 @@ public class UpdateWarehouseCommand : IRequest
 }
 
 public class UpdateWarehouseCommandHandler(ILogger<UpdateWarehouseCommandHandler> logger,
-                                    IWarehouseRepository warehosueRepository,
+                                    IWarehouseRepository warehouseRepository,
                                     AutoMapper.IMapper mapper,
                                     IWarehouseAuthorizationService wHSAuthorizationService) : IRequestHandler<UpdateWarehouseCommand>
 
 {
     public async Task Handle(UpdateWarehouseCommand request, CancellationToken cancellationToken)
     {
-        logger.LogInformation($"Updateing warehosue with id: {request.WarehouseId}");
-        var warehouse = await warehosueRepository.GetByIdAsync(request.WarehouseId);
+        logger.LogInformation($"Updateing warehouse with id: {request.WarehouseId}");
+        var warehouse = await warehouseRepository.GetByIdAsync(request.WarehouseId);
         if (warehouse is null)
             throw new NotFoundException(nameof(Warehouse), request.WarehouseId.ToString());
         if (!wHSAuthorizationService.Authorize(warehouse, ResourceOperation.Update))
             throw new ForbidException();
 
         mapper.Map(request, warehouse);
-        await warehosueRepository.SaveChanges();
+        await warehouseRepository.SaveChanges();
         //return true;
     }
 }

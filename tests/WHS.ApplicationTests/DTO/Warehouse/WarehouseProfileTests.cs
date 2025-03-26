@@ -37,14 +37,14 @@ public class WarehouseProfileTests
             //OwnerId="90266a3c-8cec-4a20-8be7-4faf991d9f5c",
         };
         //act
-        var warehosueDto = _mapper.Map<WarehouseDto>(warehouse);
+        var warehouseDto = _mapper.Map<WarehouseDto>(warehouse);
 
         //assert 
-        warehosueDto.Should().NotBeNull();
-        warehosueDto.WarehouseId.Should().Be(warehouse.WarehouseId);
-        warehosueDto.WarehouseName.Should().Be(warehouse.WarehouseName);
-        warehosueDto.DutyStationId.Should().Be(warehouse.DutyStationId);
-        warehosueDto.BranchId.Should().Be(warehouse.BranchId);
+        warehouseDto.Should().NotBeNull();
+        warehouseDto.WarehouseId.Should().Be(warehouse.WarehouseId);
+        warehouseDto.WarehouseName.Should().Be(warehouse.WarehouseName);
+        warehouseDto.DutyStationId.Should().Be(warehouse.DutyStationId);
+        warehouseDto.BranchId.Should().Be(warehouse.BranchId);
 
     }
 
@@ -61,14 +61,14 @@ public class WarehouseProfileTests
             //OwnerId="90266a3c-8cec-4a20-8be7-4faf991d9f5c",
         };
         //act
-        var warehosue = _mapper.Map<Warehouse>(warehouse);
+        var warehouse = _mapper.Map<Warehouse>(warehouse);
 
         //assert 
-        warehosue.Should().NotBeNull();
+        warehouse.Should().NotBeNull();
        
-        warehosue.WarehouseName.Should().Be(warehouse.WarehouseName);
-        warehosue.DutyStationId.Should().Be(warehouse.DutyStationId);
-        warehosue.BranchId.Should().Be(warehouse.BranchId);
+        warehouse.WarehouseName.Should().Be(warehouse.WarehouseName);
+        warehouse.DutyStationId.Should().Be(warehouse.DutyStationId);
+        warehouse.BranchId.Should().Be(warehouse.BranchId);
 
     }
 
@@ -84,11 +84,11 @@ public class WarehouseProfileTests
       
         };
         //act
-        var warehosue = _mapper.Map<Warehouse>(warehouse);
+        var warehouse = _mapper.Map<Warehouse>(warehouse);
 
         //assert 
-        warehosue.Should().NotBeNull();
-        warehosue.WarehouseName.Should().Be(warehouse.WarehouseName);
+        warehouse.Should().NotBeNull();
+        warehouse.WarehouseName.Should().Be(warehouse.WarehouseName);
 
 
     }

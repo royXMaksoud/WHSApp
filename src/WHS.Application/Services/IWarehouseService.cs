@@ -1,9 +1,6 @@
-﻿using WHS.Application.DTO.Warehouse;
-using WHS.Domain.Entities.Code;
-
-namespace WHS.Application.Services
+﻿namespace WHS.Application.Services
 {
-    public interface IWarehosueService
+    public interface IWarehouseService
     {
         Task<IEnumerable<WarehouseDto>> GetAllWarehouses();
         Task<WarehouseDto?> GetById(Guid id);

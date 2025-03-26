@@ -5,7 +5,7 @@
 namespace WHS.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class warehosueOwnerAdded : Migration
+    public partial class warehouseOwnerAdded : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

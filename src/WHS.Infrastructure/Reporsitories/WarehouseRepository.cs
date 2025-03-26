@@ -23,8 +23,8 @@ internal class WarehouseRepository(WarehouseDbContext dbContext) : IWarehouseRep
 
     public async Task<IEnumerable<Warehouse>> GetAllAsync()
     {
-        var warehosues = await dbContext.Warehouses.ToListAsync();
-        return warehosues;
+        var warehouses = await dbContext.Warehouses.ToListAsync();
+        return warehouses;
     }
 
     public async Task<(IEnumerable<Warehouse>, int)> GetAllMatchingAsync(string? searchPhrase,
@@ -49,19 +49,19 @@ internal class WarehouseRepository(WarehouseDbContext dbContext) : IWarehouseRep
         }
 
         var searchPhraseLower = searchPhrase?.ToLower();
-        var warehosues = await dbContext.Warehouses.Where(x => searchPhrase == null ||
+        var warehouses = await dbContext.Warehouses.Where(x => searchPhrase == null ||
                                                                             (x.WarehouseName.ToLower().Contains(searchPhrase))
                                                                    ).Skip(pageSize * (pageNumber - 1)).Take(pageSize).ToListAsync();
-        return (warehosues, totalCount);
+        return (warehouses, totalCount);
     }
 
     public async Task<Warehouse> GetByIdAsync(Guid id)
     {
-        var warehosue = await dbContext.Warehouses
-            .Include(r => r.WarehosueUsers)
+        var warehouse = await dbContext.Warehouses
+            .Include(r => r.warehouseUsers)
             .FirstOrDefaultAsync(x => x.WarehouseId == id);
 
-        return warehosue;
+        return warehouse;
     }
 
     public Task SaveChanges() => dbContext.SaveChangesAsync();

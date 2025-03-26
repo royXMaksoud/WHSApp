@@ -12,9 +12,9 @@ using WHS.Domain.Repositories;
 
 namespace WHS.Application.Services
 {
-    internal class WarehosueService(IWarehosueRepository warehosueRepository, 
-        ILogger<WarehosueService> logger,
-        IMapper mapper) : IWarehosueService
+    internal class WarehouseService(IWarehouseRepository warehosueRepository, 
+        ILogger<WarehouseService> logger,
+        IMapper mapper) : IWarehouseService
     {
         //public async Task<Guid> Create(CreateWarehouseDto dto)
         //{

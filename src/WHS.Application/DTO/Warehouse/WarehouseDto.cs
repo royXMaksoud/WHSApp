@@ -10,7 +10,7 @@ public class WarehouseDto
     public string DutyStationName { get; set; } = default!;
     public string UserName { get; set; } = default!;
     public DateTime? CreateDate { get; set; }
-    public List<WarehosueUserDto> WarehosueUsers { get; set; } = [];
+    public List<warehouseUserDto> warehouseUsers { get; set; } = [];
 
     public DutyStationDto DutyStation { get; set; } = default!;
 

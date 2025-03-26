@@ -8,7 +8,7 @@ public class WarehouseProfile : Profile
     {
         CreateMap<UpdateWarehouseCommand, Warehouse>();
 
-        //test case :CreateMap_ForCreateWarehouseCommandToWarehosue_MapsCorrectly
+        //test case :CreateMap_ForCreateWarehouseCommandTowarehouse_MapsCorrectly
         CreateMap<CreateWarehouseCommand, Warehouse>()
         .ForMember(dest => dest.WarehouseName, opt => opt.MapFrom(src => src.WarehouseName))
         .ForMember(dest => dest.DutyStationId, opt => opt.MapFrom(src => src.DutyStationId))
@@ -16,7 +16,7 @@ public class WarehouseProfile : Profile
 
         CreateMap<Warehouse, WarehouseDto>()
         .ForMember(d => d.BranchName, opt => opt.MapFrom(src => src.Branch == null ? null : src.Branch.BranchName))
-        .ForMember(d => d.WarehosueUsers, opt => opt.MapFrom(src => src.WarehosueUsers));
+        .ForMember(d => d.warehouseUsers, opt => opt.MapFrom(src => src.warehouseUsers));
         //.ForMember(d=>d.UserName,opt=>opt.MapFrom(src=>new WarehouseFocalPoint { CreateDate=src.CreateDate });
     }
 }

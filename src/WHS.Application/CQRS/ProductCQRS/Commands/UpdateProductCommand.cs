@@ -15,7 +15,7 @@ namespace WHS.Application.CQRS.ProductCQRS.Commands
     {
         public async Task Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            logger.LogInformation($"Updateing warehosue with id: {request.ProductId}");
+            logger.LogInformation($"Updateing warehouse with id: {request.ProductId}");
             var product = await currRepository.GetByIdAsync(request.ProductId);
             //if (warehouse is null)
             //    return false;

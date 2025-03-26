@@ -382,25 +382,25 @@ namespace WHS.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WarehosueUser",
+                name: "warehouseUser",
                 columns: table => new
                 {
-                    WarehosueUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    warehouseUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     WarehouseId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     WarehouseId1 = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WarehosueUser", x => x.WarehosueUserId);
+                    table.PrimaryKey("PK_warehouseUser", x => x.warehouseUserId);
                     table.ForeignKey(
-                        name: "FK_WarehosueUser_Warehouses_WarehouseId",
+                        name: "FK_warehouseUser_Warehouses_WarehouseId",
                         column: x => x.WarehouseId,
                         principalTable: "Warehouses",
                         principalColumn: "WarehouseId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_WarehosueUser_Warehouses_WarehouseId1",
+                        name: "FK_warehouseUser_Warehouses_WarehouseId1",
                         column: x => x.WarehouseId1,
                         principalTable: "Warehouses",
                         principalColumn: "WarehouseId");
@@ -517,13 +517,13 @@ namespace WHS.Infrastructure.Migrations
                 column: "InventoryItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WarehosueUser_WarehouseId",
-                table: "WarehosueUser",
+                name: "IX_warehouseUser_WarehouseId",
+                table: "warehouseUser",
                 column: "WarehouseId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WarehosueUser_WarehouseId1",
-                table: "WarehosueUser",
+                name: "IX_warehouseUser_WarehouseId1",
+                table: "warehouseUser",
                 column: "WarehouseId1");
 
             migrationBuilder.CreateIndex(
@@ -570,7 +570,7 @@ namespace WHS.Infrastructure.Migrations
                 name: "Transactions");
 
             migrationBuilder.DropTable(
-                name: "WarehosueUser");
+                name: "warehouseUser");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

@@ -14,7 +14,7 @@ namespace WHS.Domain.Entities.Code
 
         public Branch Branch { get; set; }
 
-        public ICollection<WarehosueUser> WarehosueUsers { get; set; }
+        public ICollection<warehouseUser> warehouseUsers { get; set; }
         public User Owner { get; set; }
         public string OwnerId { get; set; } = default!;
     }

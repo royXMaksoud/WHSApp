@@ -8,7 +8,7 @@ using WHS.Domain.Repositories;
 using WHS.Infrastructure.Authorization.Requirements.Warehouse;
 using Xunit;
 
-namespace WHS.Infrastructure.Authorization.RequirementsWarehosue.Tests
+namespace WHS.Infrastructure.Authorization.Requirementswarehouse.Tests
 {
     public class CreatedMultipleWarehouseRequirementsHandlerTests
     {

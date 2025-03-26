@@ -6,7 +6,7 @@ namespace WHS.Infrastructure.Authorization.Requirements.Warehouse
 {
     public class CreatedMultipleWarehouseRequirements(int minimumWarehouseCreated) : IAuthorizationRequirement
     {
-        public int MinimumWarehosuesCreated { get; } = minimumWarehouseCreated;
+        public int MinimumwarehousesCreated { get; } = minimumWarehouseCreated;
     }
 
     internal class CreatedMultipleWarehouseRequirementsHandler(IWarehouseRepository warehouseRepository,
@@ -16,8 +16,8 @@ namespace WHS.Infrastructure.Authorization.Requirements.Warehouse
         {
             var currentUser = userContext.GetCurrentUser();
             var warehouses = await warehouseRepository.GetAllAsync();
-            var userWarehosuesCreated = warehouses.Count(x => x.OwnerId == currentUser!.Id);
-            if (userWarehosuesCreated >= requirement.MinimumWarehosuesCreated)
+            var userwarehousesCreated = warehouses.Count(x => x.OwnerId == currentUser!.Id);
+            if (userwarehousesCreated >= requirement.MinimumwarehousesCreated)
             {
                 context.Succeed(requirement);
             }

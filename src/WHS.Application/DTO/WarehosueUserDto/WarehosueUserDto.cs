@@ -1,6 +1,6 @@
-﻿public class WarehosueUserDto
+﻿public class warehouseUserDto
 {
-    public Guid WarehosueUserId { get; set; } // Primary Key
+    public Guid warehouseUserId { get; set; } // Primary Key
     public string UserName { get; set; }
 
     public DateTime? CreateDate { get; set; }

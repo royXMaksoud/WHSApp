@@ -20,17 +20,17 @@ public class CreateWarehouseCommand : IRequest<Guid>
 
 public class CreateWarehouseCommandHandler(ILogger<CreateWarehouseCommandHandler> logger,
                                            IMapper mapper,
-                                           IWarehouseRepository warehosueRepository,
+                                           IWarehouseRepository warehouseRepository,
                                            IUserContext userContext) : IRequestHandler<CreateWarehouseCommand, Guid>
 {
     public async Task<Guid> Handle(CreateWarehouseCommand request, CancellationToken cancellationToken)
     {
         var currentUser = userContext.GetCurrentUser();
         logger.LogInformation("{UserEmail} [{UserId}] is creating a new warehouse {@Warehouse}", currentUser.Email, currentUser.Id, request);
-        var warehosue = mapper.Map<Warehouse>(request);
+        var warehouse = mapper.Map<Warehouse>(request);
         // this need to be tested if correct in Project test
-        warehosue.OwnerId = currentUser.Id;
-        Guid id = await warehosueRepository.Create(warehosue);
+        warehouse.OwnerId = currentUser.Id;
+        Guid id = await warehouseRepository.Create(warehouse);
         return id;
     }
 }

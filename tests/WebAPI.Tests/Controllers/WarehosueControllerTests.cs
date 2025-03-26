@@ -19,12 +19,12 @@ using System.Net.Http.Json;
 
 namespace WebAPI.Controllers.Tests
 {
-    public class WarehosueControllerTests :IClassFixture<WebApplicationFactory<Program>>
+    public class warehouseControllerTests :IClassFixture<WebApplicationFactory<Program>>
     {
         private readonly WebApplicationFactory<Program> _factory;
         private readonly Mock<IWarehouseRepository> _warehouseRepositoryMock = new();
         private readonly Mock<IWHSSeeder> _warehouseSeederMock = new();
-        public WarehosueControllerTests(WebApplicationFactory<Program> factory)
+        public warehouseControllerTests(WebApplicationFactory<Program> factory)
         {
             _factory = factory.WithWebHostBuilder(builder =>
             {
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers.Tests
         {
             //arrange
             var id = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c");
-            //this used to not care by if warehosue exists or not just we need to test the function 
+            //this used to not care by if warehouse exists or not just we need to test the function 
             _warehouseRepositoryMock.Setup(m => m.GetByIdAsync(id)).ReturnsAsync((Warehouse?)null);
             var client = _factory.CreateClient();
 
@@ -83,13 +83,13 @@ namespace WebAPI.Controllers.Tests
         {
             //arrange
             var id = Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db");
-            var warehosue = new Warehouse()
+            var warehouse = new Warehouse()
             {
                 WarehouseId = id,
                 WarehouseName="Berlin"
             };
             
-            _warehouseRepositoryMock.Setup(m => m.GetByIdAsync(id)).ReturnsAsync(warehosue);
+            _warehouseRepositoryMock.Setup(m => m.GetByIdAsync(id)).ReturnsAsync(warehouse);
             var client = _factory.CreateClient();
 
             //act
@@ -99,7 +99,7 @@ namespace WebAPI.Controllers.Tests
             //assert
             response.StatusCode.Should().Be(System.Net.HttpStatusCode.OK);
             WarehouseDto.Should().NotBeNull();
-            warehosue.WarehouseName.Should().Be("Berlin");
+            warehouse.WarehouseName.Should().Be("Berlin");
             
 
 

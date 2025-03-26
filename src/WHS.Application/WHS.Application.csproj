@@ -9,8 +9,6 @@
   <ItemGroup>
     <Compile Remove="CQRS\WarehouseCQRS\Commands\UpdateWarehouseCommand.cs" />
     <Compile Remove="DTO\Warehouse\CreateWarehouseDto.cs" />
-    <Compile Remove="Services\IWarehosueService.cs" />
-    <Compile Remove="Services\WarehosueService.cs" />
     <Compile Remove="Validators\Warehouse\CreateWarehouseDtoValidtor.cs" />
   </ItemGroup>
 
@@ -30,7 +28,6 @@
   <ItemGroup>
     <Folder Include="CQRS\ProductCQRS\Validtor\" />
     <Folder Include="CQRS\Users\Queries\" />
-    <Folder Include="Services\" />
     <Folder Include="Validators\Warehouse\" />
   </ItemGroup>
 

@@ -17,19 +17,19 @@ public class GetAllWarehousesQuery : IRequest<PageResult<WarehouseDto>>
 
 public class GetAllWarehousesQueryHandler(ILogger<GetAllWarehousesQueryHandler> logger,
                                           IMapper mapper,
-                                          IWarehouseRepository warehosueRepository) : IRequestHandler<GetAllWarehousesQuery, PageResult<WarehouseDto>>
+                                          IWarehouseRepository warehouseRepository) : IRequestHandler<GetAllWarehousesQuery, PageResult<WarehouseDto>>
 {
     public async Task<PageResult<WarehouseDto>> Handle(GetAllWarehousesQuery request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Getting all warehoues");
-        var (warehouses, totalCount) = await warehosueRepository.GetAllMatchingAsync(request.SearchPharse,
+        var (warehouses, totalCount) = await warehouseRepository.GetAllMatchingAsync(request.SearchPharse,
             request.PageSize,
             request.PageNumber,
             request.SortBy,
             request.SortDirection);
-        //var warehosueDto = warehouses.Select(WarehouseDto.FromEntity);
-        var warehosueDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
-        var result = new PageResult<WarehouseDto>(warehosueDtos, totalCount, request.PageSize, request.PageNumber);
+        //var warehouseDto = warehouses.Select(WarehouseDto.FromEntity);
+        var warehouseDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
+        var result = new PageResult<WarehouseDto>(warehouseDtos, totalCount, request.PageSize, request.PageNumber);
         return result!;
     }
 }

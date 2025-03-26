@@ -14,17 +14,17 @@ namespace WHS.Application.CQRS.WarehouseCQRS.Queries
 
     public class GetWarehouseByIdQueryHandler(ILogger<GetWarehouseByIdQuery> logger
                                      , IMapper mapper
-                                     , IWarehouseRepository warehosueRepository) : IRequestHandler<GetWarehouseByIdQuery, WarehouseDto?>
+                                     , IWarehouseRepository warehouseRepository) : IRequestHandler<GetWarehouseByIdQuery, WarehouseDto?>
     {
         public async Task<WarehouseDto> Handle(GetWarehouseByIdQuery request, CancellationToken cancellationToken)
         {
             logger.LogInformation($"Getting Warehouses{request.Id}");
-            var warehosue = await warehosueRepository.GetByIdAsync(request.Id);
-            if (warehosue is null)
+            var warehouse = await warehouseRepository.GetByIdAsync(request.Id);
+            if (warehouse is null)
                 throw new NotFoundException(nameof(Warehouse), request.Id.ToString());
-            //var warehouseDto = WarehouseDto.FromEntity(warehosue);
-            var warehosueDto = mapper.Map<WarehouseDto?>(warehosue);
-            return warehosueDto;
+            //var warehouseDto = WarehouseDto.FromEntity(warehouse);
+            var warehouseDto = mapper.Map<WarehouseDto?>(warehouse);
+            return warehouseDto;
         }
     }
 }
