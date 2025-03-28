@@ -7,6 +7,7 @@ using WHS.Domain.Entities.WHS;
 
 internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) : IdentityDbContext<User>(options)
 {
+    
     public DbSet<Country> Countries { get; set; }
     public DbSet<Organization> Organizations { get; set; }
     public DbSet<DutyStation> DutyStations { get; set; }

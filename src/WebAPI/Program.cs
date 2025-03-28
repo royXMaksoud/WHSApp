@@ -8,6 +8,7 @@ using WHS.Infrastructure.Extensions;
 try
 {
     var builder = WebApplication.CreateBuilder(args);
+
     builder.Services.AddApplication();
     builder.AddPresentation();
     builder.Services.AddInfrastructure(builder.Configuration);
