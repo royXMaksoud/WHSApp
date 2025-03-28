@@ -16,7 +16,7 @@ namespace WHS.Infrastructure.Authorization.Requirements.Warehouse
         {
             var currentUser = userContext.GetCurrentUser();
             var warehouses = await warehouseRepository.GetAllAsync();
-            var userwarehousesCreated = warehouses.Count(x => x.OwnerId == currentUser!.Id);
+            var userwarehousesCreated = warehouses.Count(x => x.OwnerUserId == currentUser!.Id);
             if (userwarehousesCreated >= requirement.MinimumwarehousesCreated)
             {
                 context.Succeed(requirement);

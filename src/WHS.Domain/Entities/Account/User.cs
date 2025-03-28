@@ -8,5 +8,6 @@ namespace WHS.Domain.Entities.Account
         public string? Nationality { get; set; }
         public DateOnly? DateOfBirth { get; set; }
         public List<Warehouse> OwnedWarehouses { get; set; } = [];
+        public List<CodeTable> OwnedCodeTables { get; set; } = [];
     }
 }

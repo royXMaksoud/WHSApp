@@ -17,31 +17,19 @@ public class GetAllWarehousesQuery : IRequest<PageResult<WarehouseDto>>
 
 public class GetAllWarehousesQueryHandler(ILogger<GetAllWarehousesQueryHandler> logger,
                                           IMapper mapper,
-                                          IWarehouseRepository warehouseRepository) : IRequestHandler<GetAllWarehousesQuery, PageResult<WarehouseDto>>
+                                          IWarehouseRepository warehosueRepository) : IRequestHandler<GetAllWarehousesQuery, PageResult<WarehouseDto>>
 {
     public async Task<PageResult<WarehouseDto>> Handle(GetAllWarehousesQuery request, CancellationToken cancellationToken)
     {
-        try
-        {
-            logger.LogInformation("Getting all warehouses");
-            var (warehouses, totalCount) = await warehouseRepository.GetAllMatchingAsync(request.SearchPharse,
-                request.PageSize,
-                request.PageNumber,
-                request.SortBy,
-                request.SortDirection);
-            //var warehouseDto = warehouses.Select(WarehouseDto.FromEntity);
-            var warehouseDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
-            var result = new PageResult<WarehouseDto>(warehouseDtos, totalCount, request.PageSize, request.PageNumber);
-            return result!;
-
-        }
-        catch (Exception ex)
-        {
-
-            logger.LogError(ex, "An error occurred while retrieving warehouses.");
-            // You can return a custom error result here, or rethrow the exception for the global error handling.
-            throw new ApplicationException("An error occurred while retrieving warehouses.", ex);
-        }
-       
+        logger.LogInformation("Getting all warehoues");
+        var (warehouses, totalCount) = await warehosueRepository.GetAllMatchingAsync(request.SearchPharse,
+                                request.PageSize,
+                                request.PageNumber,
+                                request.SortBy,
+                                request.SortDirection);
+        //var warehosueDto = warehouses.Select(WarehouseDto.FromEntity);
+        var warehosueDtos = mapper.Map<IEnumerable<WarehouseDto>>(warehouses);
+        var result = new PageResult<WarehouseDto>(warehosueDtos, totalCount, request.PageSize, request.PageNumber);
+        return result!;
     }
 }

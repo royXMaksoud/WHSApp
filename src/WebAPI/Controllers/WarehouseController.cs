@@ -23,7 +23,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Policy =PolicyNames.HasNationality)]
+        //[Authorize(Policy =PolicyNames.HasNationality)]
         public async Task<IActionResult> GetById([FromRoute] Guid id)
         {
             var warehouse = await mediator.Send(new GetWarehouseByIdQuery(id));
@@ -33,6 +33,17 @@ namespace WebAPI.Controllers
                 return NotFound();
 
             return Ok(warehouse);
+        }
+        [HttpPost]
+        [Authorize(Roles = UserRoles.Owner)]
+        public async Task<IActionResult> CreateWarehouse([FromBody] CreateWarehouseCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            Guid id = await mediator.Send(command);
+            return CreatedAtAction(nameof(GetById), new { id }, null);
         }
 
         [HttpPatch("{id}")]
@@ -53,16 +64,6 @@ namespace WebAPI.Controllers
             return NotFound();
         }
 
-        [HttpPost]
-        [Authorize(Roles = UserRoles.Owner)]
-        public async Task<IActionResult> CreateWarehouse([FromBody] CreateWarehouseCommand command)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            Guid id = await mediator.Send(command);
-            return CreatedAtAction(nameof(GetById), new { id }, null);
-        }
+      
     }
 }

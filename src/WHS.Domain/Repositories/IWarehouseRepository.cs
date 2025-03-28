@@ -5,16 +5,16 @@ namespace WHS.Domain.Repositories
 {
     public interface IWarehouseRepository
     {
-        Task<IEnumerable<Warehouse>> GetAllAsync();
+            Task<IEnumerable<Warehouse>> GetAllAsync();
 
-        Task<Warehouse?> GetByIdAsync(Guid id);
+            Task<Warehouse?> GetByIdAsync(Guid id);
 
-        Task<Guid> Create(Warehouse warehouse);
+            Task<Guid> Create(Warehouse warehouse);
 
-        Task Delete(Warehouse warehouse);
+            Task Delete(Warehouse warehouse);
 
-        Task SaveChanges();
+            Task SaveChanges();
 
-        Task<(IEnumerable<Warehouse>, int)> GetAllMatchingAsync(string? searchPhrase, int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection);
+            Task<(IEnumerable<Warehouse>, int)> GetAllMatchingAsync(string? searchPhrase, int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection);
     }
 }

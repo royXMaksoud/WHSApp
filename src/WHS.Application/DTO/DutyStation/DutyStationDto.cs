@@ -3,7 +3,7 @@
     public class DutyStationDto
     {
         public Guid DutyStationId { get; set; } // Primary Key
-        public string DutyStationName { get; set; }
+        public string DutyStationName { get; set; } = default!;
         public Guid OrganizationId { get; set; } // Foreign Key to Organization
 
         //// Navigation Properties

@@ -10,6 +10,7 @@ using WHS.Domin.Services;
 using WHS.Infrastructure.Authorization;
 using WHS.Infrastructure.Authorization.Requirements.Warehouse;
 using WHS.Infrastructure.Reporsitories;
+using WHS.Infrastructure.Repositories;
 using WHS.Infrastructure.Seeders;
 using WHS.Infrastructure.Services;
 
@@ -23,7 +24,7 @@ namespace WHS.Infrastructure.Extensions
             var connectionString = configuration.GetConnectionString("WarehouseDb");
             //to add db context
             services.AddDbContext<WarehouseDbContext>(options => options.UseSqlServer(connectionString).EnableSensitiveDataLogging());
-            //add IwaerhosueRepo to WarehouseRepo here will replace all actions in Iwarehouse wtih Repo
+            //add IwaerhouseRepo to WarehouseRepo here will replace all actions in Iwarehouse wtih Repo
 
             //register asp.net identity user/role
             services.AddIdentityApiEndpoints<User>()

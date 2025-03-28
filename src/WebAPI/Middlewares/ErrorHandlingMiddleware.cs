@@ -1,4 +1,8 @@
 ﻿using WHS.Domain.Exceptions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace WebAPI.Middleware
 {
@@ -20,21 +24,46 @@ namespace WebAPI.Middleware
             catch (NotFoundException notFound)
             {
                 context.Response.StatusCode = 404;
-                await context.Response.WriteAsJsonAsync(new { message = notFound.Message, error = "NotFoundException" });
+                context.Response.ContentType = "application/json";
+                var response = new { message = notFound.Message, error = "NotFoundException" };
+                await context.Response.WriteAsJsonAsync(response);
                 _logger.LogWarning("NotFoundException occurred. Message: {Message}, Path: {Path}", notFound.Message, context.Request.Path);
             }
-            catch (ForbidException)
+            catch (ForbidException forbid)
             {
                 context.Response.StatusCode = 403;
-                await context.Response.WriteAsync("Access forbidden");
+                context.Response.ContentType = "application/json";
+                var response = new { message = forbid.Message, error = "ForbidException" };
+                await context.Response.WriteAsJsonAsync(response);
+            }
+            catch (ArgumentException argEx)
+            {
+                // Specific handling for invalid argument (e.g., invalid ID)
+                context.Response.StatusCode = 400; // Bad Request
+                context.Response.ContentType = "application/json";
+                var response = new { message = argEx.Message, error = "ArgumentException" };
+                await context.Response.WriteAsJsonAsync(response);
+                _logger.LogWarning("ArgumentException occurred. Message: {Message}, Path: {Path}", argEx.Message, context.Request.Path);
+            }
+            catch (FormatException formatEx)
+            {
+                // Specific handling for incorrect format (e.g., wrong ID format)
+                context.Response.StatusCode = 400; // Bad Request
+                context.Response.ContentType = "application/json";
+                var response = new { message = formatEx.Message, error = "FormatException" };
+                await context.Response.WriteAsJsonAsync(response);
+                _logger.LogWarning("FormatException occurred. Message: {Message}, Path: {Path}", formatEx.Message, context.Request.Path);
             }
             catch (Exception ex)
             {
-                // Log full exception details, including stack trace
-                _logger.LogError(ex, "Unhandled exception occurred. Exception: {Message}, StackTrace: {StackTrace}, Path: {Path}", ex.Message, ex.StackTrace, context.Request.Path);
+                // Log all other unhandled exceptions with full details
+                _logger.LogError(ex, "Unhandled exception occurred. Exception: {Message}, StackTrace: {StackTrace}, Path: {Path}, Method: {Method}",
+                    ex.Message, ex.StackTrace, context.Request.Path, context.Request.Method);
 
-                context.Response.StatusCode = 500;
-                await context.Response.WriteAsync($"Something went wrong. Exception: {ex.Message}");
+                context.Response.StatusCode = 500; // Internal Server Error
+                context.Response.ContentType = "application/json";
+                var response = new { message = "Something went wrong.", error = ex.Message };
+                await context.Response.WriteAsJsonAsync(response);
             }
         }
     }

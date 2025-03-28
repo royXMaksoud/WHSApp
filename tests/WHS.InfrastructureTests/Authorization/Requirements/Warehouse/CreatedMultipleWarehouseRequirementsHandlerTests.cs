@@ -8,7 +8,7 @@ using WHS.Domain.Repositories;
 using WHS.Infrastructure.Authorization.Requirements.Warehouse;
 using Xunit;
 
-namespace WHS.Infrastructure.Authorization.Requirementswarehouse.Tests
+namespace WHS.Infrastructure.Authorization.RequirementsWarehosue.Tests
 {
     public class CreatedMultipleWarehouseRequirementsHandlerTests
     {
@@ -23,15 +23,16 @@ namespace WHS.Infrastructure.Authorization.Requirementswarehouse.Tests
             {
                 new()
                 {
-                    OwnerId=currentUser.Id
+
+                    OwnerUserId =currentUser.Id
                 },
                 new()
                 {
-                    OwnerId=currentUser.Id
+                    OwnerUserId =currentUser.Id
                 },
                 new()
                 {
-                    OwnerId="e0911b06-1391-4b88-9b03-62a54b2ffc7e"
+                    OwnerUserId ="e0911b06-1391-4b88-9b03-62a54b2ffc7e"
                 }
 
             };
@@ -62,7 +63,7 @@ namespace WHS.Infrastructure.Authorization.Requirementswarehouse.Tests
             {
                 new()
                 {
-                    OwnerId=currentUser.Id
+                    OwnerUserId =currentUser.Id
                 },
                
                 

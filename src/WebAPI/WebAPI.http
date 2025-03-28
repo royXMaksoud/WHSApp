@@ -7,7 +7,7 @@ GET {{WebAPI_HostAddress}}/api/warehouse/GetAll?pageSize=5&pageNumber=10
 
 ###
 
-GET {{WebAPI_HostAddress}}/api/warehouse/90266a3c-8cec-4a20-8be7-4faf991d9f5c
+GET {{WebAPI_HostAddress}}/api/warehouse/90266a3c-8cec-4a20-8be7-4faf991d9f56
 
 ###
 
@@ -80,3 +80,18 @@ Content-Type: application/json
  
   "password": "P@ssw0rd"
 }
+###
+@entityName=Warehouse
+POST {{WebAPI_HostAddress}}/api/dynamicquery/filter/{{entityName}}
+Content-Type: application/json
+
+{
+   "EntityName": "Warehouse",
+   "OrderBy": "WarehouseName",
+   "IsDescending": true,
+   "Filters": [
+       { "PropertyName": "WarehouseName", "Operator": "==", "Value": "Berlin" }
+   ]
+}
+
+###

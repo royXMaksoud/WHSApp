@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.Extensions.Logging;
 using WHS.Domain.Entities.Code;
 using WHS.Domain.Exceptions;
@@ -16,8 +17,8 @@ public class UpdateWarehouseCommand : IRequest
 
 public class UpdateWarehouseCommandHandler(ILogger<UpdateWarehouseCommandHandler> logger,
                                     IWarehouseRepository warehouseRepository,
-                                    AutoMapper.IMapper mapper,
-                                    IWarehouseAuthorizationService wHSAuthorizationService) : IRequestHandler<UpdateWarehouseCommand>
+                                    IMapper mapper,
+                                    IWarehouseAuthorizationService warehouseAuthorizationService) : IRequestHandler<UpdateWarehouseCommand>
 
 {
     public async Task Handle(UpdateWarehouseCommand request, CancellationToken cancellationToken)
@@ -26,7 +27,7 @@ public class UpdateWarehouseCommandHandler(ILogger<UpdateWarehouseCommandHandler
         var warehouse = await warehouseRepository.GetByIdAsync(request.WarehouseId);
         if (warehouse is null)
             throw new NotFoundException(nameof(Warehouse), request.WarehouseId.ToString());
-        if (!wHSAuthorizationService.Authorize(warehouse, ResourceOperation.Update))
+        if (!warehouseAuthorizationService.Authorize(warehouse, ResourceOperation.Update))
             throw new ForbidException();
 
         mapper.Map(request, warehouse);

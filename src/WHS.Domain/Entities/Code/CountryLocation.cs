@@ -4,11 +4,11 @@
     {
         public Guid LocationId { get; set; } // Primary Key
         public Guid CountryId { get; set; } // Foreign Key to Country
-        public string LocationName { get; set; }
+        public required string LocationName { get; set; }
 
         // Navigation Property
-        public Country Country { get; set; }
+        public required Country Country { get; set; }
 
-        public ICollection<Warehouse> Warehouses { get; set; }  // Related Warehouses
+        public required ICollection<Warehouse> Warehouses { get; set; }  // Related Warehouses
     }
 }

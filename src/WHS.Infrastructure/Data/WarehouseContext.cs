@@ -20,6 +20,8 @@ internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) 
     public DbSet<OrderItem> OrderItems { get; set; }
     public DbSet<Shipment> Shipments { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
+    public DbSet<CodeTable> CodeTable { get; set; }
+    public DbSet<CodeTableValue> CodeTableValue { get; set; }
     //public DbSet<UserAccount> UserAccounts { get; set; }
 
     //public DbSet<UserRole> UserRoles { get; set; }
@@ -125,6 +127,24 @@ internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) 
             .HasForeignKey(t => t.InventoryItemId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        modelBuilder.Entity<CodeTableValue>()
+             .HasKey(c => c.TableValueId);  // Explicitly define the primary key for CodeTable
+
+        modelBuilder.Entity<CodeTable>()
+          .HasKey(c => c.TableId);  // Explicitly define the primary key for CodeTable
+
+        //CodeTablevalue CodeTable (many - to 1)
+        modelBuilder.Entity<CodeTableValue>()
+            .HasOne(t => t.CodeTable)
+            .WithMany(f => f.CodeTableValues)
+            .HasForeignKey(t => t.TableId);
+
+        modelBuilder.Entity<Warehouse>()
+              .HasOne(w => w.Owner)  // One-to-one relationship with User
+              .WithMany()  // A User can own many warehouses, but no reverse navigation property in User
+              .HasForeignKey(w => w.OwnerUserId)  // Use OwnerUserId as the foreign key
+              .IsRequired();  // Ensure that the foreign key is required (you can omit this if it's optional)
+
         // modelBuilder.Entity<UserRole>()
         //.HasOne(ur => ur.UserAccount)
         //.WithMany(u => u.UserRoles)
@@ -166,6 +186,17 @@ internal class WarehouseDbContext(DbContextOptions<WarehouseDbContext> options) 
         modelBuilder.Entity<User>()
             .HasMany(o => o.OwnedWarehouses)
             .WithOne(x => x.Owner)
-            .HasForeignKey(x => x.OwnerId);
+            .HasForeignKey(x => x.OwnerUserId);
+
+        modelBuilder.Entity<User>()
+        .HasMany(o => o.OwnedCodeTables)
+        .WithOne(x => x.Owner)
+        .HasForeignKey(x => x.OwnerUserId);
+
+        modelBuilder.Entity<CodeTable>()
+              .HasOne(w => w.Owner)  // One-to-one relationship with User
+              .WithMany()  // A User can own many warehouses, but no reverse navigation property in User
+              .HasForeignKey(w => w.OwnerUserId)  // Use OwnerUserId as the foreign key
+              .IsRequired();  // Ensure that the foreign key is required (you can omit this if it's optional)
     }
 }

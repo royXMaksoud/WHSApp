@@ -14,6 +14,7 @@ namespace WHS.Application.Extensions
 
             services.AddAutoMapper(applicationAssembly);
 
+            //add Fluent Validation 
             services.AddValidatorsFromAssembly(applicationAssembly)
                 .AddFluentValidationAutoValidation();
 

@@ -245,6 +245,51 @@ namespace WHS.Infrastructure.Migrations
                     b.ToTable("Branches");
                 });
 
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
+                {
+                    b.Property<Guid>("TableId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("TableDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TableName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TableId");
+
+                    b.ToTable("CodeTable");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTableValue", b =>
+                {
+                    b.Property<Guid>("TableValueId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("TableId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ValueName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TableValueId");
+
+                    b.HasIndex("TableId");
+
+                    b.ToTable("CodeTableValue");
+                });
+
             modelBuilder.Entity("WHS.Domain.Entities.Code.Country", b =>
                 {
                     b.Property<Guid>("CountryId")
@@ -346,6 +391,42 @@ namespace WHS.Infrastructure.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
+                {
+                    b.Property<Guid>("WarehouseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BranchId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CountryLocationLocationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DutyStationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OwnerUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("WarehouseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("WarehouseId");
+
+                    b.HasIndex("BranchId");
+
+                    b.HasIndex("CountryLocationLocationId");
+
+                    b.HasIndex("DutyStationId");
+
+                    b.HasIndex("OwnerUserId");
+
+                    b.ToTable("Warehouses");
+                });
+
             modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
                 {
                     b.Property<Guid>("warehouseUserId")
@@ -368,42 +449,6 @@ namespace WHS.Infrastructure.Migrations
                     b.HasIndex("WarehouseId1");
 
                     b.ToTable("warehouseUser");
-                });
-
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
-                {
-                    b.Property<Guid>("WarehouseId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BranchId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CountryLocationLocationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("DutyStationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("OwnerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WarehouseName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WarehouseId");
-
-                    b.HasIndex("BranchId");
-
-                    b.HasIndex("CountryLocationLocationId");
-
-                    b.HasIndex("DutyStationId");
-
-                    b.HasIndex("OwnerId");
-
-                    b.ToTable("Warehouses");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.WHS.InventoryItem", b =>
@@ -604,6 +649,17 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("Organization");
                 });
 
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTableValue", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.CodeTable", "CodeTable")
+                        .WithMany("CodeTableValues")
+                        .HasForeignKey("TableId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CodeTable");
+                });
+
             modelBuilder.Entity("WHS.Domain.Entities.Code.CountryLocation", b =>
                 {
                     b.HasOne("WHS.Domain.Entities.Code.Country", "Country")
@@ -637,21 +693,6 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("Country");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
-                {
-                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", null)
-                        .WithMany("warehouseUsers")
-                        .HasForeignKey("WarehouseId1");
-
-                    b.Navigation("warehouse");
-                });
-
             modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
                 {
                     b.HasOne("WHS.Domain.Entities.Code.Branch", "Branch")
@@ -672,7 +713,7 @@ namespace WHS.Infrastructure.Migrations
 
                     b.HasOne("WHS.Domain.Entities.Account.User", "Owner")
                         .WithMany("OwnedWarehouses")
-                        .HasForeignKey("OwnerId")
+                        .HasForeignKey("OwnerUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -681,6 +722,21 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("DutyStation");
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "warehouse")
+                        .WithMany()
+                        .HasForeignKey("WarehouseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", null)
+                        .WithMany("warehouseUsers")
+                        .HasForeignKey("WarehouseId1");
+
+                    b.Navigation("warehouse");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.WHS.InventoryItem", b =>
@@ -751,6 +807,11 @@ namespace WHS.Infrastructure.Migrations
             modelBuilder.Entity("WHS.Domain.Entities.Code.Branch", b =>
                 {
                     b.Navigation("Warehouses");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
+                {
+                    b.Navigation("CodeTableValues");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Country", b =>

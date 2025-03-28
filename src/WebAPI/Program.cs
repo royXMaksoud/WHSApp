@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using WebAPI.Middleware;
 using WebAPI.WebApplicationBuilderExtensions;
@@ -15,9 +16,13 @@ try
     app.UseMiddleware<ErrorHandlingMiddleware>(); // Use error handling middleware first
     app.UseMiddleware<RequestTimeLoggingMiddleware>();
 
+
     app.UseSerilogRequestLogging();
     builder.Logging.AddConsole();
     builder.Logging.AddDebug();
+    // Register MediatR and all handlers in your assembly
+    builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly)); // Register handlers from the same assembly
+
     //await seeder.Seed();
     // Configure the HTTP request pipeline
     if (app.Environment.IsDevelopment())

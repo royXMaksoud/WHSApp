@@ -1,5 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 using Serilog;
+using Serilog.Events;
 using WebAPI.Middleware;
 
 namespace WebAPI.WebApplicationBuilderExtensions
@@ -36,8 +37,12 @@ namespace WebAPI.WebApplicationBuilderExtensions
             builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
 
             builder.Host.UseSerilog((context, configuration) =>
-                configuration.ReadFrom.Configuration(context.Configuration)
+                configuration
+                              .MinimumLevel.Override("Microsft.EntityFrameWorkCore",LogEventLevel.Warning)
+                              .WriteTo.File("Logs/Warehouse-API.log",rollingInterval:RollingInterval.Day,rollOnFileSizeLimit:true)
+                              .WriteTo.Console(outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss}] [{Level:u3}] | {SourceContext} | {Message}{NewLine}{Exception}")
             );
+            
         }
     }
 }

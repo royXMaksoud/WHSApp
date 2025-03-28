@@ -51,7 +51,7 @@ public class CreateWarehouseCommandHandlerTests
 
         // assert
         result.Should().Be(Guid.Parse("3ca667fd-469e-4b1d-acf1-73621aba763b"));
-        Warehouse.OwnerId.Should().Be("WarehouseId");
+        Warehouse.OwnerUserId.Should().Be("WarehouseId");
         WarehouseRepositoryMock.Verify(r => r.Create(Warehouse), Times.Once);
     }
 }

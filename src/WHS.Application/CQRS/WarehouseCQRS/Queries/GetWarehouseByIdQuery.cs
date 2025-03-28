@@ -19,11 +19,11 @@ namespace WHS.Application.CQRS.WarehouseCQRS.Queries
         public async Task<WarehouseDto> Handle(GetWarehouseByIdQuery request, CancellationToken cancellationToken)
         {
             logger.LogInformation($"Getting Warehouses{request.Id}");
-            var warehouse = await warehouseRepository.GetByIdAsync(request.Id);
-            if (warehouse is null)
+            var tempResult = await warehouseRepository.GetByIdAsync(request.Id);
+            if (tempResult is null)
                 throw new NotFoundException(nameof(Warehouse), request.Id.ToString());
             //var warehouseDto = WarehouseDto.FromEntity(warehouse);
-            var warehouseDto = mapper.Map<WarehouseDto?>(warehouse);
+            var warehouseDto = mapper.Map<WarehouseDto?>(tempResult);
             return warehouseDto;
         }
     }

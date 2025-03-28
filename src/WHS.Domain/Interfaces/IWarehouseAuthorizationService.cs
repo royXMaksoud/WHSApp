@@ -6,5 +6,6 @@ namespace WHS.Domin.Services
     public interface IWarehouseAuthorizationService
     {
         bool Authorize(Warehouse warehouse, ResourceOperation resourceOperation);
+        bool AuthorizeCodeTable(CodeTable result, ResourceOperation update);
     }
 }
