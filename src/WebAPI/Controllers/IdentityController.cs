@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WHS.Application.CQRS.Users.Commands;
+using WHS.Application.CQRS.Account.Users.Commands;
 using WHS.Domain.Constants;
 
 namespace WebAPI.Controllers

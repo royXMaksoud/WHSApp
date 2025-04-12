@@ -225,34 +225,63 @@ namespace WHS.Infrastructure.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Branch", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Audit.ActionLog", b =>
                 {
-                    b.Property<Guid>("BranchId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<string>("BranchName")
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ActionName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrganizationId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<double>("ElapsedSeconds")
+                        .HasColumnType("float");
 
-                    b.HasKey("BranchId");
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
 
-                    b.HasIndex("OrganizationId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Branches");
+                    b.ToTable("ActionLogs");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Brand", b =>
                 {
-                    b.Property<Guid>("TableId")
+                    b.Property<Guid>("BrandGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
+
+                    b.Property<string>("BrandDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("BrandName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("BrandGUID");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
+                {
+                    b.Property<Guid>("TableGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("TableDescription")
                         .IsRequired()
@@ -262,37 +291,39 @@ namespace WHS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TableId");
+                    b.HasKey("TableGUID");
 
-                    b.ToTable("CodeTable");
+                    b.HasIndex("CreatedByUserId");
+
+                    b.ToTable("CodeTables");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTableValue", b =>
                 {
-                    b.Property<Guid>("TableValueId")
+                    b.Property<Guid>("TableValueGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Active")
                         .HasColumnType("bit");
 
-                    b.Property<Guid>("TableId")
+                    b.Property<Guid>("TableGUID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ValueName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TableValueId");
+                    b.HasKey("TableValueGUID");
 
-                    b.HasIndex("TableId");
+                    b.HasIndex("TableGUID");
 
-                    b.ToTable("CodeTableValue");
+                    b.ToTable("CodeTableValues");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Country", b =>
                 {
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid>("CountryGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -300,34 +331,49 @@ namespace WHS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("CountryId");
+                    b.HasKey("CountryGUID");
 
                     b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.CountryLocation", b =>
                 {
-                    b.Property<Guid>("LocationId")
+                    b.Property<Guid>("LocationGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid>("CountryGUID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("LocationName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("LocationId");
+                    b.HasKey("LocationGUID");
 
-                    b.HasIndex("CountryId");
+                    b.HasIndex("CountryGUID");
 
                     b.ToTable("CountryLocations");
                 });
 
+            modelBuilder.Entity("WHS.Domain.Entities.Code.DeterminerType", b =>
+                {
+                    b.Property<Guid>("DeterminerTypeGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TypeName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("DeterminerTypeGUID");
+
+                    b.ToTable("DeterminerTypes");
+                });
+
             modelBuilder.Entity("WHS.Domain.Entities.Code.DutyStation", b =>
                 {
-                    b.Property<Guid>("DutyStationId")
+                    b.Property<Guid>("DutyStationGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -335,39 +381,185 @@ namespace WHS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrganizationId")
+                    b.Property<Guid>("InstitutionGUID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("DutyStationId");
+                    b.HasKey("DutyStationGUID");
 
-                    b.HasIndex("OrganizationId");
+                    b.HasIndex("InstitutionGUID");
 
                     b.ToTable("DutyStations");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Organization", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.InstitutionByCountry", b =>
                 {
-                    b.Property<Guid>("OrganizationId")
+                    b.Property<Guid>("InstitutionGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CountryId")
+                    b.Property<Guid>("CountryGUID")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("InstitutioName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("OrganizationGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("InstitutionGUID");
+
+                    b.HasIndex("CountryGUID");
+
+                    b.HasIndex("OrganizationGUID");
+
+                    b.ToTable("InstitutionByCountries");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Organization", b =>
+                {
+                    b.Property<Guid>("OrganizationGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("OrganizationCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OrganizationName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("OrganizationId");
-
-                    b.HasIndex("CountryId");
+                    b.HasKey("OrganizationGUID");
 
                     b.ToTable("Organizations");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Product", b =>
                 {
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("ProductGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("BrandGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ProductCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductSubCategoryGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ProductGUID");
+
+                    b.HasIndex("BrandGUID");
+
+                    b.HasIndex("ProductSubCategoryGUID");
+
+                    b.HasIndex("ProductTypeGUID");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductByWarehouse", b =>
+                {
+                    b.Property<Guid>("ProductByWarehouseGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("WarehouseGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ProductByWarehouseGUID");
+
+                    b.HasIndex("ProductGUID");
+
+                    b.HasIndex("WarehouseGUID");
+
+                    b.ToTable("ProductByWarehouse");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductCategory", b =>
+                {
+                    b.Property<Guid>("ProductCategoryGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProductCategoryGUID");
+
+                    b.ToTable("ProductCategories");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductDeterminer", b =>
+                {
+                    b.Property<Guid>("ProductDeterminerGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("DeterminerTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ProductDeterminerGUID");
+
+                    b.HasIndex("DeterminerTypeGUID");
+
+                    b.HasIndex("ProductGUID");
+
+                    b.ToTable("ProductDeterminers");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductFeature", b =>
+                {
+                    b.Property<Guid>("ProductFeatureGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FeatureName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FeatureValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("ProductGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ProductFeatureGUID");
+
+                    b.HasIndex("ProductGUID");
+
+                    b.ToTable("ProductFeatures");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductSubCategory", b =>
+                {
+                    b.Property<Guid>("ProductSubCategoryGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -375,216 +567,691 @@ namespace WHS.Infrastructure.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<Guid>("ProductCategoryGUID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("ProductName")
+                    b.Property<string>("SubCategoryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SKU")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("ProductSubCategoryGUID");
 
-                    b.HasKey("ProductId");
+                    b.HasIndex("ProductCategoryGUID");
 
-                    b.ToTable("Products");
+                    b.ToTable("ProductSubCategories");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductType", b =>
                 {
-                    b.Property<Guid>("WarehouseId")
+                    b.Property<Guid>("ProductTypeGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("BranchId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("CountryLocationLocationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("DutyStationId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("OwnerUserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("WarehouseName")
+                    b.Property<string>("ProductTypeName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("WarehouseId");
+                    b.HasKey("ProductTypeGUID");
 
-                    b.HasIndex("BranchId");
-
-                    b.HasIndex("CountryLocationLocationId");
-
-                    b.HasIndex("DutyStationId");
-
-                    b.HasIndex("OwnerUserId");
-
-                    b.ToTable("Warehouses");
+                    b.ToTable("ProductTypes");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.RequesterType", b =>
                 {
-                    b.Property<Guid>("warehouseUserId")
+                    b.Property<Guid>("RequesterTypeGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RequesterCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RequesterName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("RequesterTypeGUID");
+
+                    b.ToTable("RequesterTypes");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Translation", b =>
+                {
+                    b.Property<Guid>("TranslationGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EntityGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LanguageCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("ProductGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("TranslationGUID");
+
+                    b.HasIndex("ProductGUID");
+
+                    b.ToTable("Translations");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.WarehosueFocalPoint", b =>
+                {
+                    b.Property<Guid>("WarehosueFocalPointGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("WarehouseId")
+                    b.Property<string>("UserFocalPointId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("WarehouseGUID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("WarehouseId1")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasKey("WarehosueFocalPointGUID");
 
-                    b.HasKey("warehouseUserId");
+                    b.HasIndex("UserFocalPointId");
 
-                    b.HasIndex("WarehouseId");
+                    b.HasIndex("WarehouseGUID");
 
-                    b.HasIndex("WarehouseId1");
-
-                    b.ToTable("warehouseUser");
+                    b.ToTable("WarehosueFocalPoints");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.InventoryItem", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
                 {
-                    b.Property<Guid>("InventoryItemId")
+                    b.Property<Guid>("WarehouseGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("ProductId")
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("DutyStationGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WarehouseCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WarehouseName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("WarehouseParentGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("WarehouseGUID");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("DutyStationGUID");
+
+                    b.ToTable("Warehouses");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryDetail", b =>
+                {
+                    b.Property<Guid>("EntryDetailGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("CurrentMovementStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CurrentOwnedWarehousGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CurrentPhysicalStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CurrentProductStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("CurrentUSDPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("ShipmentDate")
+                        .HasColumnType("date");
+
+                    b.Property<Guid>("ShipmentRequestDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EntryDetailGUID");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("ShipmentRequestDetailGUID");
+
+                    b.ToTable("EntryDetails");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryDeterminer", b =>
+                {
+                    b.Property<Guid>("EntryDeterminerGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("DeterminerTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DeterminerValue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EntryDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EntryDeterminerGUID");
+
+                    b.ToTable("EntryDeterminers");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryMovement", b =>
+                {
+                    b.Property<Guid>("EntryMovementGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("EntryDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("FlowStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsLastAction")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly?>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EntryMovementGUID");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.ToTable("EntryMovements");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Entry.EntryDetailPrice", b =>
+                {
+                    b.Property<Guid>("EntryDetailPriceGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EntryDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PriceTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("PriceValue")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("EntryDetailPriceGUID");
+
+                    b.ToTable("EntryDetailPrices");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequest", b =>
+                {
+                    b.Property<Guid>("ReleaseRequestGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("LastRequestStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ReleaseDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("RequestNameGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RequestTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SequenceCode")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SequenceNumber")
+                        .HasColumnType("int");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserCreatorId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("WarehouseUserGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("YearId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ReleaseRequestGUID");
+
+                    b.HasIndex("RequestTypeGUID");
+
+                    b.HasIndex("UserCreatorId");
+
+                    b.ToTable("ReleaseRequests");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequestDetail", b =>
+                {
+                    b.Property<Guid>("ReleaseRequestDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("D")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("EntryDetailGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("EntryDetailPriceGUID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("UnitPrice")
+                    b.Property<Guid>("ReleaseRequestGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("TotalPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("WarehouseId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
 
-                    b.HasKey("InventoryItemId");
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("ProductId");
+                    b.HasKey("ReleaseRequestDetailGUID");
 
-                    b.HasIndex("WarehouseId");
-
-                    b.ToTable("InventoryItems");
+                    b.ToTable("ReleaseRequestDetails");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Order", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequestMovement", b =>
                 {
-                    b.Property<Guid>("OrderId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("ReleaseRequestMovementGUID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CustomerName")
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("OrderNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ShippedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("OrderId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.OrderItem", b =>
-                {
-                    b.Property<Guid>("OrderItemId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("FlowStatusGUID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<bool>("IsLastAction")
+                        .HasColumnType("bit");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Quantity")
+                    b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.HasKey("OrderItemId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Shipment", b =>
-                {
-                    b.Property<Guid>("ShipmentId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("ReleaseRequestGUID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Carrier")
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrderId")
+                    b.Property<string>("UserCreatorId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("ReleaseRequestMovementGUID");
+
+                    b.HasIndex("UserCreatorId");
+
+                    b.ToTable("ReleaseRequestMovements");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequest", b =>
+                {
+                    b.Property<Guid>("ShipmentRequestGUID")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("ShipmentDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("TrackingNumber")
+                    b.Property<int>("ShipmentNumber")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ShipmentTypeGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SupplierGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ShipmentId");
+                    b.Property<Guid>("WarehouseGUID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasIndex("OrderId");
+                    b.HasKey("ShipmentRequestGUID");
 
-                    b.ToTable("Shipments");
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("SupplierGUID");
+
+                    b.HasIndex("WarehouseGUID");
+
+                    b.ToTable("ShipmentRequests");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Transaction", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequestDetail", b =>
                 {
-                    b.Property<Guid>("TransactionId")
+                    b.Property<Guid>("ShipmentRequestDetailGUID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("InventoryItemId")
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("EruoPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("LocalCurrencyPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<Guid>("ProductGUID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("datetime2");
+                    b.Property<Guid>("ShipmentRequestGUID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("TransactionType")
+                    b.Property<decimal>("USDPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TransactionId");
+                    b.Property<Guid>("WarehoudGUID")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasIndex("InventoryItemId");
+                    b.HasKey("ShipmentRequestDetailGUID");
 
-                    b.ToTable("Transactions");
+                    b.HasIndex("ProductGUID");
+
+                    b.HasIndex("ShipmentRequestGUID");
+
+                    b.ToTable("ShipmentRequestDetails");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequestMovement", b =>
+                {
+                    b.Property<Guid>("ShipmentRequestMovementGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("Active")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Comments")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<Guid>("FlowStatusGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("IsLastAction")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("ShipmentRequestGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ShipmentRequestMovementGUID");
+
+                    b.HasIndex("CreatedByUserId");
+
+                    b.HasIndex("ShipmentRequestGUID");
+
+                    b.ToTable("ShipmentRequestMovements");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.Supplier", b =>
+                {
+                    b.Property<Guid>("SupplierGUID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("CreateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("CreatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("LocationGUID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateOnly>("UpdateDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("UpdatedByUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserCreatorId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("SupplierGUID");
+
+                    b.HasIndex("LocationGUID");
+
+                    b.HasIndex("UserCreatorId");
+
+                    b.ToTable("Suppliers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -638,23 +1305,23 @@ namespace WHS.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Branch", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.Code.Organization", "Organization")
-                        .WithMany("Branches")
-                        .HasForeignKey("OrganizationId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("OwnedCodeTables")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Organization");
+                    b.Navigation("UserCreator");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTableValue", b =>
                 {
                     b.HasOne("WHS.Domain.Entities.Code.CodeTable", "CodeTable")
                         .WithMany("CodeTableValues")
-                        .HasForeignKey("TableId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("TableGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("CodeTable");
@@ -664,8 +1331,8 @@ namespace WHS.Infrastructure.Migrations
                 {
                     b.HasOne("WHS.Domain.Entities.Code.Country", "Country")
                         .WithMany("CountryLocations")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("CountryGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Country");
@@ -673,84 +1340,73 @@ namespace WHS.Infrastructure.Migrations
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.DutyStation", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.Code.Organization", "Organization")
+                    b.HasOne("WHS.Domain.Entities.Code.InstitutionByCountry", "InstitutionByCountry")
                         .WithMany("DutyStations")
-                        .HasForeignKey("OrganizationId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasForeignKey("InstitutionGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("InstitutionByCountry");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.InstitutionByCountry", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.Country", "Country")
+                        .WithMany("InstitutionByCountries")
+                        .HasForeignKey("CountryGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Code.Organization", "Organization")
+                        .WithMany("InstitutionByCountries")
+                        .HasForeignKey("OrganizationGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Country");
 
                     b.Navigation("Organization");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Organization", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Product", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.Code.Country", "Country")
-                        .WithMany("Organizations")
-                        .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Country");
-                });
-
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
-                {
-                    b.HasOne("WHS.Domain.Entities.Code.Branch", "Branch")
-                        .WithMany("Warehouses")
-                        .HasForeignKey("BranchId")
+                    b.HasOne("WHS.Domain.Entities.Code.Brand", "Brand")
+                        .WithMany("Products")
+                        .HasForeignKey("BrandGUID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("WHS.Domain.Entities.Code.CountryLocation", null)
-                        .WithMany("Warehouses")
-                        .HasForeignKey("CountryLocationLocationId");
-
-                    b.HasOne("WHS.Domain.Entities.Code.DutyStation", "DutyStation")
-                        .WithMany("Warehouses")
-                        .HasForeignKey("DutyStationId")
+                    b.HasOne("WHS.Domain.Entities.Code.ProductSubCategory", "ProductSubCategory")
+                        .WithMany("Products")
+                        .HasForeignKey("ProductSubCategoryGUID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("WHS.Domain.Entities.Account.User", "Owner")
-                        .WithMany("OwnedWarehouses")
-                        .HasForeignKey("OwnerUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("WHS.Domain.Entities.Code.ProductType", "ProductType")
+                        .WithMany("Products")
+                        .HasForeignKey("ProductTypeGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Branch");
+                    b.Navigation("Brand");
 
-                    b.Navigation("DutyStation");
+                    b.Navigation("ProductSubCategory");
 
-                    b.Navigation("Owner");
+                    b.Navigation("ProductType");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.warehouseUser", b =>
-                {
-                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", null)
-                        .WithMany("warehouseUsers")
-                        .HasForeignKey("WarehouseId1");
-
-                    b.Navigation("warehouse");
-                });
-
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.InventoryItem", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductByWarehouse", b =>
                 {
                     b.HasOne("WHS.Domain.Entities.Code.Product", "Product")
-                        .WithMany("InventoryItems")
-                        .HasForeignKey("ProductId")
+                        .WithMany("ProductByWarehouses")
+                        .HasForeignKey("ProductGUID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("WHS.Domain.Entities.Code.Warehouse", "Warehouse")
-                        .WithMany()
-                        .HasForeignKey("WarehouseId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany("ProductByWarehouses")
+                        .HasForeignKey("WarehouseGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Product");
@@ -758,55 +1414,320 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("Warehouse");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.OrderItem", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductDeterminer", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.WHS.Order", "Order")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("WHS.Domain.Entities.Code.DeterminerType", "DeterminerType")
+                        .WithMany("ProductDeterminers")
+                        .HasForeignKey("DeterminerTypeGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("WHS.Domain.Entities.Code.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .WithMany("Determiners")
+                        .HasForeignKey("ProductGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Order");
+                    b.Navigation("DeterminerType");
 
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Shipment", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductFeature", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.WHS.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("WHS.Domain.Entities.Code.Product", "Product")
+                        .WithMany("Features")
+                        .HasForeignKey("ProductGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Order");
+                    b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Transaction", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductSubCategory", b =>
                 {
-                    b.HasOne("WHS.Domain.Entities.WHS.InventoryItem", "InventoryItem")
-                        .WithMany()
-                        .HasForeignKey("InventoryItemId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("WHS.Domain.Entities.Code.ProductCategory", "ProductCategory")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("ProductCategoryGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("InventoryItem");
+                    b.Navigation("ProductCategory");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Translation", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.Product", null)
+                        .WithMany("Translations")
+                        .HasForeignKey("ProductGUID");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.WarehosueFocalPoint", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserFocalPoint")
+                        .WithMany("WarehosueFocalPoints")
+                        .HasForeignKey("UserFocalPointId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "Warehouse")
+                        .WithMany("WarehosueFocalPoints")
+                        .HasForeignKey("WarehouseGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("UserFocalPoint");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("CreatedWarehouses")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Code.DutyStation", "DutyStation")
+                        .WithMany("Warehouses")
+                        .HasForeignKey("DutyStationGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("DutyStation");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryDetail", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("EntryDetails")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Shipment.ShipmentRequestDetail", "ShipmentRequestDetail")
+                        .WithMany("EntryDetails")
+                        .HasForeignKey("ShipmentRequestDetailGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ShipmentRequestDetail");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryDeterminer", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Enntry.EntryDetail", "EntryDetail")
+                        .WithMany("EntryDeterminers")
+                        .HasForeignKey("EntryDeterminerGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EntryDetail");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryMovement", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("EntryMovements")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Enntry.EntryDetail", "EntryDetail")
+                        .WithMany("EntryMovements")
+                        .HasForeignKey("EntryMovementGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EntryDetail");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Entry.EntryDetailPrice", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Enntry.EntryDetail", "EntryDetail")
+                        .WithMany("EntryDetailPrices")
+                        .HasForeignKey("EntryDetailPriceGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EntryDetail");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequest", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.RequesterType", "RequesterType")
+                        .WithMany("ReleaseRequests")
+                        .HasForeignKey("RequestTypeGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("ReleaseRequests")
+                        .HasForeignKey("UserCreatorId");
+
+                    b.Navigation("RequesterType");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequestDetail", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Enntry.EntryDetail", "EntryDetail")
+                        .WithMany("ReleaseRequestDetails")
+                        .HasForeignKey("ReleaseRequestDetailGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Entry.EntryDetailPrice", "EntryDetailPrice")
+                        .WithMany("ReleaseRequestDetails")
+                        .HasForeignKey("ReleaseRequestDetailGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Release.ReleaseRequest", "ReleaseRequest")
+                        .WithMany("ReleaseRequestDetails")
+                        .HasForeignKey("ReleaseRequestDetailGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("EntryDetail");
+
+                    b.Navigation("EntryDetailPrice");
+
+                    b.Navigation("ReleaseRequest");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequestMovement", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Release.ReleaseRequest", "ReleaseRequest")
+                        .WithMany("ReleaseRequestMovements")
+                        .HasForeignKey("ReleaseRequestMovementGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("ReleaseRequestMovements")
+                        .HasForeignKey("UserCreatorId");
+
+                    b.Navigation("ReleaseRequest");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequest", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("ShipmentRequests")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Shipment.Supplier", "Supplier")
+                        .WithMany("ShipmentRequests")
+                        .HasForeignKey("SupplierGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Code.Warehouse", "Warehouse")
+                        .WithMany("ShipmentRequests")
+                        .HasForeignKey("WarehouseGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Supplier");
+
+                    b.Navigation("UserCreator");
+
+                    b.Navigation("Warehouse");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequestDetail", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.Product", "Product")
+                        .WithMany("ShipmentRequestDetails")
+                        .HasForeignKey("ProductGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Shipment.ShipmentRequest", "ShipmentRequest")
+                        .WithMany("ShipmentDetails")
+                        .HasForeignKey("ShipmentRequestGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("ShipmentRequest");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequestMovement", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("ShipmentRequestMovements")
+                        .HasForeignKey("CreatedByUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("WHS.Domain.Entities.Shipment.ShipmentRequest", "ShipmentRequest")
+                        .WithMany("ShipmentRequestMovements")
+                        .HasForeignKey("ShipmentRequestGUID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("ShipmentRequest");
+
+                    b.Navigation("UserCreator");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.Supplier", b =>
+                {
+                    b.HasOne("WHS.Domain.Entities.Code.CountryLocation", "CountryLocation")
+                        .WithMany("Suppliers")
+                        .HasForeignKey("LocationGUID")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("WHS.Domain.Entities.Account.User", "UserCreator")
+                        .WithMany("Suppliers")
+                        .HasForeignKey("UserCreatorId");
+
+                    b.Navigation("CountryLocation");
+
+                    b.Navigation("UserCreator");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Account.User", b =>
                 {
-                    b.Navigation("OwnedWarehouses");
+                    b.Navigation("CreatedWarehouses");
+
+                    b.Navigation("EntryDetails");
+
+                    b.Navigation("EntryMovements");
+
+                    b.Navigation("OwnedCodeTables");
+
+                    b.Navigation("ReleaseRequestMovements");
+
+                    b.Navigation("ReleaseRequests");
+
+                    b.Navigation("ShipmentRequestMovements");
+
+                    b.Navigation("ShipmentRequests");
+
+                    b.Navigation("Suppliers");
+
+                    b.Navigation("WarehosueFocalPoints");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.Code.Branch", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Code.Brand", b =>
                 {
-                    b.Navigation("Warehouses");
+                    b.Navigation("Products");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.CodeTable", b =>
@@ -818,12 +1739,17 @@ namespace WHS.Infrastructure.Migrations
                 {
                     b.Navigation("CountryLocations");
 
-                    b.Navigation("Organizations");
+                    b.Navigation("InstitutionByCountries");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.CountryLocation", b =>
                 {
-                    b.Navigation("Warehouses");
+                    b.Navigation("Suppliers");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.DeterminerType", b =>
+                {
+                    b.Navigation("ProductDeterminers");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.DutyStation", b =>
@@ -831,26 +1757,96 @@ namespace WHS.Infrastructure.Migrations
                     b.Navigation("Warehouses");
                 });
 
+            modelBuilder.Entity("WHS.Domain.Entities.Code.InstitutionByCountry", b =>
+                {
+                    b.Navigation("DutyStations");
+                });
+
             modelBuilder.Entity("WHS.Domain.Entities.Code.Organization", b =>
                 {
-                    b.Navigation("Branches");
-
-                    b.Navigation("DutyStations");
+                    b.Navigation("InstitutionByCountries");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Product", b =>
                 {
-                    b.Navigation("InventoryItems");
+                    b.Navigation("Determiners");
+
+                    b.Navigation("Features");
+
+                    b.Navigation("ProductByWarehouses");
+
+                    b.Navigation("ShipmentRequestDetails");
+
+                    b.Navigation("Translations");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductCategory", b =>
+                {
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductSubCategory", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.ProductType", b =>
+                {
+                    b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Code.RequesterType", b =>
+                {
+                    b.Navigation("ReleaseRequests");
                 });
 
             modelBuilder.Entity("WHS.Domain.Entities.Code.Warehouse", b =>
                 {
-                    b.Navigation("warehouseUsers");
+                    b.Navigation("ProductByWarehouses");
+
+                    b.Navigation("ShipmentRequests");
+
+                    b.Navigation("WarehosueFocalPoints");
                 });
 
-            modelBuilder.Entity("WHS.Domain.Entities.WHS.Order", b =>
+            modelBuilder.Entity("WHS.Domain.Entities.Enntry.EntryDetail", b =>
                 {
-                    b.Navigation("OrderItems");
+                    b.Navigation("EntryDetailPrices");
+
+                    b.Navigation("EntryDeterminers");
+
+                    b.Navigation("EntryMovements");
+
+                    b.Navigation("ReleaseRequestDetails");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Entry.EntryDetailPrice", b =>
+                {
+                    b.Navigation("ReleaseRequestDetails");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Release.ReleaseRequest", b =>
+                {
+                    b.Navigation("ReleaseRequestDetails");
+
+                    b.Navigation("ReleaseRequestMovements");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequest", b =>
+                {
+                    b.Navigation("ShipmentDetails");
+
+                    b.Navigation("ShipmentRequestMovements");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.ShipmentRequestDetail", b =>
+                {
+                    b.Navigation("EntryDetails");
+                });
+
+            modelBuilder.Entity("WHS.Domain.Entities.Shipment.Supplier", b =>
+                {
+                    b.Navigation("ShipmentRequests");
                 });
 #pragma warning restore 612, 618
         }

@@ -1,12 +1,6 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using WHS.Application.CQRS.WarehouseCQRS.Validtor;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WHS.Application.CQRS.WarehouseCQRS.Commands;
-using FluentValidation.TestHelper;
+﻿using FluentValidation.TestHelper;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Commands;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Validtor;
 using Xunit;
 
 namespace WHS.Application.CQRS.WarehouseCQRS.Validtor.Tests
@@ -21,7 +15,7 @@ namespace WHS.Application.CQRS.WarehouseCQRS.Validtor.Tests
             var command = new CreateWarehouseCommand
             {
                 WarehouseName="Dresden",
-                DutyStationId= Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
+                DutyStationGUID= Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
                 BranchId=Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f57"),
 
 
@@ -40,7 +34,7 @@ namespace WHS.Application.CQRS.WarehouseCQRS.Validtor.Tests
             var command = new CreateWarehouseCommand
             {
                 WarehouseName = "t",
-                DutyStationId = Guid.Empty,
+                DutyStationGUID = Guid.Empty,
                 BranchId = Guid.Empty,
 
 
@@ -51,7 +45,7 @@ namespace WHS.Application.CQRS.WarehouseCQRS.Validtor.Tests
             var result = validator.TestValidate(command);
             //assert
             result.ShouldHaveValidationErrorFor(c => c.WarehouseName);
-            result.ShouldHaveValidationErrorFor(c => c.DutyStationId);
+            result.ShouldHaveValidationErrorFor(c => c.DutyStationGUID);
             result.ShouldHaveValidationErrorFor(c => c.BranchId);
         }
 

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: WebAPI/Dockerfile
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+      - redis
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - warehouse-network
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "P@ssw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    networks:
+      - warehouse-network
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - warehouse-network
+
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - warehouse-network
+
+networks:
+  warehouse-network:
+    driver: bridge

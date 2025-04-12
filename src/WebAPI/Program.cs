@@ -1,8 +1,8 @@
-using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using WebAPI.Middleware;
 using WebAPI.WebApplicationBuilderExtensions;
 using WHS.Application.Extensions;
+using WHS.Application.Filters;
 using WHS.Domain.Entities.Account;
 using WHS.Infrastructure.Extensions;
 try
@@ -12,6 +12,8 @@ try
     builder.Services.AddApplication();
     builder.AddPresentation();
     builder.Services.AddInfrastructure(builder.Configuration);
+  
+
 
     var app = builder.Build();
     app.UseMiddleware<ErrorHandlingMiddleware>(); // Use error handling middleware first
@@ -21,6 +23,9 @@ try
     app.UseSerilogRequestLogging();
     builder.Logging.AddConsole();
     builder.Logging.AddDebug();
+    
+
+
     // Register MediatR and all handlers in your assembly
     builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly)); // Register handlers from the same assembly
 

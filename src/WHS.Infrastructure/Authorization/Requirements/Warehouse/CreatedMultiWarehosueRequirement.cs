@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using WHS.Application.UserAuth;
-using WHS.Domain.Repositories;
+using WHS.Domain.Repositories.Code;
 
 namespace WHS.Infrastructure.Authorization.Requirements.Warehouse
 {
@@ -16,7 +16,7 @@ namespace WHS.Infrastructure.Authorization.Requirements.Warehouse
         {
             var currentUser = userContext.GetCurrentUser();
             var warehouses = await warehouseRepository.GetAllAsync();
-            var userwarehousesCreated = warehouses.Count(x => x.OwnerUserId == currentUser!.Id);
+            var userwarehousesCreated = warehouses.Count(x => x.CreatedByUserId == currentUser!.Id);
             if (userwarehousesCreated >= requirement.MinimumwarehousesCreated)
             {
                 context.Succeed(requirement);

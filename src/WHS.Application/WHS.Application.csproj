@@ -7,14 +7,35 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <None Remove="Services\**" />
+    <Compile Remove="CQRS\EntryProductDto\**" />
+    <Compile Remove="CQRS\Entry\EntryProductsCQRS\**" />
+    <Compile Remove="CQRS\InventoryItemCQRS\**" />
+    <Compile Remove="CQRS\ProductCQRS\**" />
+    <Compile Remove="CQRS\Shipment\ShipmentRequest\**" />
+    <Compile Remove="CQRS\TableCQRS\**" />
+    <Compile Remove="DTO\InventoryItem\**" />
+    <Compile Remove="DTO\Product\**" />
+    <EmbeddedResource Remove="CQRS\EntryProductDto\**" />
+    <EmbeddedResource Remove="CQRS\Entry\EntryProductsCQRS\**" />
+    <EmbeddedResource Remove="CQRS\InventoryItemCQRS\**" />
+    <EmbeddedResource Remove="CQRS\ProductCQRS\**" />
+    <EmbeddedResource Remove="CQRS\Shipment\ShipmentRequest\**" />
+    <EmbeddedResource Remove="CQRS\TableCQRS\**" />
+    <EmbeddedResource Remove="DTO\InventoryItem\**" />
+    <EmbeddedResource Remove="DTO\Product\**" />
+    <None Remove="CQRS\EntryProductDto\**" />
+    <None Remove="CQRS\Entry\EntryProductsCQRS\**" />
+    <None Remove="CQRS\InventoryItemCQRS\**" />
+    <None Remove="CQRS\ProductCQRS\**" />
+    <None Remove="CQRS\Shipment\ShipmentRequest\**" />
+    <None Remove="CQRS\TableCQRS\**" />
+    <None Remove="DTO\InventoryItem\**" />
+    <None Remove="DTO\Product\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="CQRS\WarehouseCQRS\Commands\UpdateWarehouseCommand.cs" />
-    <Compile Remove="DTO\Warehouse\CreateWarehouseDto.cs" />
+    <Compile Remove="CQRS\Code\WarehouseCQRS\Commands\UpdateWarehouseCommand.cs" />
+    <Compile Remove="DTO\Code\Warehouse\CreateWarehouseDto.cs" />
     <Compile Remove="Validators\Warehouse\CreateWarehouseDtoValidtor.cs" />
   </ItemGroup>
 
@@ -24,6 +45,7 @@
     <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
     <PackageReference Include="MediatR" Version="12.4.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.3" />
+    <PackageReference Include="Microsoft.ML" Version="4.0.2" />
     <PackageReference Include="Scriban" Version="6.0.0" />
     <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
   </ItemGroup>
@@ -33,8 +55,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CQRS\ProductCQRS\Validtor\" />
-    <Folder Include="CQRS\Users\Queries\" />
+    <Folder Include="CQRS\Audit\ActionLog\Queries\" />
+    <Folder Include="CQRS\GenericCQRS\Commands\" />
+    <Folder Include="CQRS\GenericCQRS\Queries\" />
+    <Folder Include="CQRS\Account\Users\Queries\" />
+    <Folder Include="CQRS\Release\Validtor\" />
+    <Folder Include="Services\" />
     <Folder Include="Validators\Warehouse\" />
   </ItemGroup>
 

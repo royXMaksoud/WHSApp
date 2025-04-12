@@ -5,14 +5,21 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WHS.Application.UserAuth;
 using WHS.Domain.Entities.Account;
-using WHS.Domain.Repositories;
+using WHS.Domain.Repositories.Audit;
+using WHS.Domain.Repositories.Code;
+using WHS.Domain.Repositories.Dropdown;
+using WHS.Domain.Repositories.Entry;
+using WHS.Domain.Repositories.Release;
+using WHS.Domain.Repositories.Shipment;
 using WHS.Domin.Services;
 using WHS.Infrastructure.Authorization;
 using WHS.Infrastructure.Authorization.Requirements.Warehouse;
-using WHS.Infrastructure.Reporsitories;
-using WHS.Infrastructure.Repositories;
+using WHS.Infrastructure.Repositories.Audit;
+using WHS.Infrastructure.Repositories.Code;
+using WHS.Infrastructure.Repositories.Entry;
+using WHS.Infrastructure.Repositories.Release;
+using WHS.Infrastructure.Repositories.Shipment;
 using WHS.Infrastructure.Seeders;
-using WHS.Infrastructure.Services;
 
 namespace WHS.Infrastructure.Extensions
 {
@@ -34,16 +41,28 @@ namespace WHS.Infrastructure.Extensions
             //register user context
             services.AddScoped<IUserContext, UserContext>();
             services.AddScoped<IWHSSeeder, WHSSeeder>();
-            services.AddScoped<IWarehouseRepository, WarehouseRepository>();
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<IInventoryItemRepository, InventoryItemRepository>();
+            //DI for Repositories
+            ////////////////////////////////////////
+            services.AddScoped<IWarehouseRepository, WarehouseRepository>();            
+            services.AddScoped<IEntryDetailRepository, EntryDetailRepository>();
+            services.AddScoped<ICodeTableRepository, CodeTableRepository>();
+            services.AddScoped<IDropdownRepository, DropdownRepository>();
+            services.AddScoped<ICashServiceRepository, CashServiceRepository>();
+            services.AddScoped<IActionLogRepository, ActionLogRepository>();
+            services.AddScoped<IShipmentRequestRepository, ShipmentRequestRepository>();
+            services.AddScoped<IReleaseRequestRepository, ReleaseRequestRepository>();
+
+            ////////////////////////////////////////
+
             services.AddAuthorizationBuilder()
                 .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "German", "Spain"))
                 .AddPolicy(PolicyNames.AtLeast20, builder => builder.AddRequirements(new MinimumAgeRequirement(20)))
-                .AddPolicy(PolicyNames.CreatedAtleast2Restaurants, builder => builder.AddRequirements(new CreatedMultipleWarehouseRequirements(2)));
+                .AddPolicy(PolicyNames.CreatedAtleast2Warehouses, builder => builder.AddRequirements(new CreatedMultipleWarehouseRequirements(2)));
 
             services.AddScoped<IAuthorizationHandler, MinimumAgeRequirementHandler>();
-            services.AddScoped<IWarehouseAuthorizationService, WarehouseAuthorizationService>();
+            services.AddScoped(typeof(IAuthorizationService<>), typeof(AuthorizationService<>));
+
+
 
             services.AddHttpContextAccessor();
         }

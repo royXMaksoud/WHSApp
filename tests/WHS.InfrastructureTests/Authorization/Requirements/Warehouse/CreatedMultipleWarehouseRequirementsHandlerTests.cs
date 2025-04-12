@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Moq;
 using WHS.Application.UserAuth;
 using WHS.Domain.Entities.Code;
-using WHS.Domain.Repositories;
+using WHS.Domain.Repositories.Code;
 using WHS.Infrastructure.Authorization.Requirements.Warehouse;
 using Xunit;
 
@@ -23,16 +23,18 @@ namespace WHS.Infrastructure.Authorization.RequirementsWarehosue.Tests
             {
                 new()
                 {
-
-                    OwnerUserId =currentUser.Id
+                    WarehouseName="Test1",
+                    CreatedByUserId =currentUser.Id
                 },
                 new()
                 {
-                    OwnerUserId =currentUser.Id
+                    WarehouseName="Test2",
+                    CreatedByUserId =currentUser.Id
                 },
                 new()
                 {
-                    OwnerUserId ="e0911b06-1391-4b88-9b03-62a54b2ffc7e"
+                    WarehouseName="Test3",
+                    CreatedByUserId ="e0911b06-1391-4b88-9b03-62a54b2ffc7e"
                 }
 
             };
@@ -62,8 +64,8 @@ namespace WHS.Infrastructure.Authorization.RequirementsWarehosue.Tests
             var warehouse = new List<Warehouse>()
             {
                 new()
-                {
-                    OwnerUserId =currentUser.Id
+                {WarehouseName="Test",
+                    CreatedByUserId =currentUser.Id
                 },
                
                 

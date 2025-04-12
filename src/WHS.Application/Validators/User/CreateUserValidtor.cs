@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using WHS.Application.DTO.User;
+using WHS.Application.DTO.Account.User;
 
 namespace WHS.Application.Validators.User;
 

@@ -1,13 +1,8 @@
-﻿using Xunit;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
-using WHS.Domain.Entities.Code;
+﻿using AutoMapper;
 using FluentAssertions;
-using WHS.Application.CQRS.WarehouseCQRS.Commands;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Commands;
+using WHS.Domain.Entities.Code;
+using Xunit;
 
 namespace Tests;
 
@@ -27,13 +22,13 @@ public class WarehouseProfileTests
     public void CreateMap_ForWarehouseToWarehouseDto_MapsCorrectly()
     {
         //arrange
-    
+       //should be changed dependding in our DB
         var warehouse = new Warehouse()
         {
-            WarehouseId= Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db"),
+            WarehouseGUID= Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db"),
             WarehouseName = "Berlin",
-            DutyStationId = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
-            BranchId = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
+            DutyStationGUID = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
+            //BranchId = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
             //OwnerId="90266a3c-8cec-4a20-8be7-4faf991d9f5c",
         };
         //act
@@ -41,10 +36,10 @@ public class WarehouseProfileTests
 
         //assert 
         warehouseDto.Should().NotBeNull();
-        warehouseDto.WarehouseId.Should().Be(warehouse.WarehouseId);
+        warehouseDto.WarehouseId.Should().Be(warehouse.WarehouseGUID);
         warehouseDto.WarehouseName.Should().Be(warehouse.WarehouseName);
-        warehouseDto.DutyStationId.Should().Be(warehouse.DutyStationId);
-        warehouseDto.BranchId.Should().Be(warehouse.BranchId);
+        warehouseDto.DutyStationId.Should().Be(warehouse.DutyStationGUID);
+        //warehouseDto.BranchId.Should().Be(warehouse.BranchId);
 
     }
 
@@ -56,7 +51,7 @@ public class WarehouseProfileTests
         var warehouse = new CreateWarehouseCommand()
         {
             WarehouseName = "Berlin",
-            DutyStationId = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
+            DutyStationGUID = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
             BranchId = Guid.Parse("90266a3c-8cec-4a20-8be7-4faf991d9f5c"),
             //OwnerId="90266a3c-8cec-4a20-8be7-4faf991d9f5c",
         };
@@ -67,8 +62,8 @@ public class WarehouseProfileTests
         warehouseMapp.Should().NotBeNull();
 
         warehouseMapp.WarehouseName.Should().Be(warehouse.WarehouseName);
-        warehouseMapp.DutyStationId.Should().Be(warehouse.DutyStationId);
-        warehouseMapp.BranchId.Should().Be(warehouse.BranchId);
+        warehouseMapp.DutyStationGUID.Should().Be(warehouse.DutyStationGUID);
+        //warehouseMapp.BranchId.Should().Be(warehouse.BranchId);
 
     }
 
@@ -79,7 +74,7 @@ public class WarehouseProfileTests
 
         var warehouse = new UpdateWarehouseCommand()
         {
-            WarehouseId = Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db"),
+            WarehouseGUID = Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db"),
             WarehouseName = "Berlin",
       
         };

@@ -1,14 +1,36 @@
-﻿using WHS.Domain.Entities.WHS;
+﻿using System.ComponentModel.DataAnnotations;
+using WHS.Domain.Entities.Shipment;
 
 namespace WHS.Domain.Entities.Code
 {
     public class Product
     {
-        public Guid ProductId { get; set; }
-        public string ProductName { get; set; } = default!;
-        public string Description { get; set; } = default!;
-        public decimal Price { get; set; }
-        public string SKU { get; set; } = default!; // Stock Keeping Unit (unique identifier)
-        public ICollection<InventoryItem> InventoryItems { get; set; } // Relationship to InventoryItems
+        [Key]
+        public Guid ProductGUID { get; set; }  // Primary Key
+
+        public Guid ProductSubCategoryGUID { get; set; }
+        public Guid ProductTypeGUID { get; set; }
+        public Guid BrandGUID { get; set; }
+        public required string ProductName { get; set; } = default!;
+        public string ProductCode { get; set; } = default!;
+        public bool Active { get; set; }
+        // Relationships
+        public ICollection<ProductDeterminer> Determiners { get; set; } = new List<ProductDeterminer>();
+        public ICollection<ProductFeature> Features { get; set; } = new List<ProductFeature>();
+        public ICollection<ShipmentRequestDetail> ShipmentRequestDetails { get; set; } = new List<ShipmentRequestDetail>();
+
+
+        // Foreign Key Relations
+        public required ProductSubCategory ProductSubCategory { get; set; }
+        public required Brand Brand { get; set; }
+
+        public required ProductType ProductType { get; set; }
+
+        // Translations for multilingual support
+        public ICollection<Translation> Translations { get; set; } = new List<Translation>();
+        //many to many with warehosue
+        public ICollection<ProductByWarehouse> ProductByWarehouses { get; set; } = new List<ProductByWarehouse>();
+
+
     }
 }

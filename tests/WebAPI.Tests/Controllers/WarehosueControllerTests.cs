@@ -12,10 +12,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authorization.Policy;
 using WebAPI.Tests;
 using Moq;
-using WHS.Domain.Repositories;
 using WHS.Infrastructure.Seeders;
 using WHS.Domain.Entities.Code;
 using System.Net.Http.Json;
+using WHS.Domain.Repositories.Code;
 
 namespace WebAPI.Controllers.Tests
 {

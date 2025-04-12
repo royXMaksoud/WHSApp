@@ -7,8 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Entities\WHS\**" />
+    <EmbeddedResource Remove="Entities\WHS\**" />
+    <None Remove="Entities\WHS\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repositories\IInventoryItemRepository.cs" />
+    <Compile Remove="Repositories\IProductRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Entities\Code\WarehosueFocalPoint.cs" />
+    <None Include="Repositories\Dropdown\ICashServiceRepository.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.3" />
     <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Repositories\Account\" />
   </ItemGroup>
 
 </Project>

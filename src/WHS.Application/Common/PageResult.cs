@@ -1,4 +1,6 @@
-﻿namespace WHS.Application.Common
+﻿using WHS.Domain.Constants; // Explicitly use the domain enum
+
+namespace WHS.Application.Common
 {
     public class PageResult<T>
     {
@@ -16,6 +18,8 @@
         public int TotalItemsCount { get; set; }
         public int ItemsFrom { get; set; }
         public int ItemsTo { get; set; }
-        public SortDirection sortDirection { get; set; }
+
+        // Explicitly reference SortDirection to avoid Swagger conflict
+        public WHS.Domain.Constants.SortDirection SortDirection { get; set; }
     }
 }

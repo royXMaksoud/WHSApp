@@ -1,0 +1,246 @@
+2025-04-03 09:25:56.896 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-03 09:25:57.420 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-03 09:25:57.483 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-03 09:25:57.485 +02:00 [INF] Hosting environment: Development
+2025-04-03 09:25:57.490 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-03 09:25:58.726 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 09:25:58.905 +02:00 [INF] HTTP GET /index.html responded 200 in 31.3930 ms
+2025-04-03 09:25:58.915 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 193.7612ms
+2025-04-03 09:25:58.925 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui.css - null null
+2025-04-03 09:25:58.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.css - null null
+2025-04-03 09:25:58.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-03 09:25:58.960 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui-bundle.js - null null
+2025-04-03 09:25:58.988 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-03 09:25:59.021 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui-standalone-preset.js - null null
+2025-04-03 09:25:59.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-03 09:25:59.166 +02:00 [INF] The file /swagger-ui.css was not modified
+2025-04-03 09:25:59.177 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 250.9245ms
+2025-04-03 09:25:59.181 +02:00 [INF] The file /index.css was not modified
+2025-04-03 09:25:59.182 +02:00 [INF] HTTP GET /swagger-ui.css responded 304 in 58.0072 ms
+2025-04-03 09:25:59.186 +02:00 [INF] The file /swagger-ui-bundle.js was not modified
+2025-04-03 09:25:59.191 +02:00 [INF] HTTP GET /index.js responded 200 in 0.6149 ms
+2025-04-03 09:25:59.194 +02:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2025-04-03 09:25:59.211 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui.css - 304 null text/css 286.8493ms
+2025-04-03 09:25:59.213 +02:00 [INF] HTTP GET /index.css responded 304 in 33.0978 ms
+2025-04-03 09:25:59.216 +02:00 [INF] HTTP GET /swagger-ui-bundle.js responded 304 in 29.6305 ms
+2025-04-03 09:25:59.218 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 257.6287ms
+2025-04-03 09:25:59.219 +02:00 [INF] HTTP GET /swagger-ui-standalone-preset.js responded 304 in 25.2719 ms
+2025-04-03 09:25:59.226 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.css - 304 null text/css 300.3682ms
+2025-04-03 09:25:59.230 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui-bundle.js - 304 null text/javascript 270.2414ms
+2025-04-03 09:25:59.240 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui-standalone-preset.js - 304 null text/javascript 218.8609ms
+2025-04-03 09:25:59.256 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 173.6864ms
+2025-04-03 09:25:59.359 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-03 09:25:59.387 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.6379 ms
+2025-04-03 09:25:59.394 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 34.671ms
+2025-04-03 15:22:37.656 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-03 15:22:38.183 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-03 15:22:38.232 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-03 15:22:38.234 +02:00 [INF] Hosting environment: Development
+2025-04-03 15:22:38.237 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-03 15:22:38.851 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 15:22:39.025 +02:00 [INF] HTTP GET /index.html responded 200 in 32.0145 ms
+2025-04-03 15:22:39.043 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 188.2345ms
+2025-04-03 15:22:39.052 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-03 15:22:39.052 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-03 15:22:39.052 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-03 15:22:39.064 +02:00 [INF] HTTP GET /index.js responded 200 in 0.8790 ms
+2025-04-03 15:22:39.111 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 66.2034ms
+2025-04-03 15:22:39.120 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 75.748ms
+2025-04-03 15:22:39.132 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 87.1984ms
+2025-04-03 15:22:39.172 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-03 15:22:39.203 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 21.9156 ms
+2025-04-03 15:22:39.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.279ms
+2025-04-03 15:24:38.349 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 15:24:38.376 +02:00 [INF] HTTP GET /index.html responded 200 in 1.2752 ms
+2025-04-03 15:24:38.384 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 34.7762ms
+2025-04-03 19:01:23.194 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-03 19:01:23.721 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-03 19:01:23.766 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-03 19:01:23.775 +02:00 [INF] Hosting environment: Development
+2025-04-03 19:01:23.786 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-03 19:01:24.374 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 19:01:24.535 +02:00 [INF] HTTP GET /index.html responded 200 in 30.4923 ms
+2025-04-03 19:01:24.546 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 175.37ms
+2025-04-03 19:01:24.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-03 19:01:24.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-03 19:01:24.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-03 19:01:24.707 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 147.9353ms
+2025-04-03 19:01:24.712 +02:00 [INF] HTTP GET /index.js responded 200 in 1.2762 ms
+2025-04-03 19:01:24.720 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 159.8209ms
+2025-04-03 19:01:24.736 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 107.917ms
+2025-04-03 19:01:24.778 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-03 19:01:24.803 +02:00 [ERR] HTTP GET /swagger/v1/swagger.json responded 500 in 15.9734 ms
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - WHS.Application.Common.PageResult`1[WHS.Application.DTO.ShipmentDTO.ShipmentRequest.ShipmentRequestDto]. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$SortDirection" for type "$WHS.Application.Common.SortDirection". The same schemaId is already used for type "$WHS.Domain.Constants.SortDirection"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForMember(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, DataProperty dataProperty)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.CreateObjectSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.<>c__DisplayClass12_0.<GenerateConcreteSchema>b__3()
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForType(Type modelType, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreateResponseMediaType(Type modelType, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.<>c__DisplayClass42_0.<GenerateResponse>b__2(String contentType)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponse(ApiDescription apiDescription, SchemaRepository schemaRepository, String statusCode, ApiResponseType apiResponseType)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponses(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-03 21:21:29.101 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-03 21:21:29.605 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-03 21:21:29.655 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-03 21:21:29.657 +02:00 [INF] Hosting environment: Development
+2025-04-03 21:21:29.660 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-03 21:21:30.119 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 21:21:30.284 +02:00 [INF] HTTP GET /index.html responded 200 in 32.6358 ms
+2025-04-03 21:21:30.293 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 181.459ms
+2025-04-03 21:21:30.297 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-03 21:21:30.297 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-03 21:21:30.297 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-03 21:21:30.315 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 18.6395ms
+2025-04-03 21:21:30.316 +02:00 [INF] HTTP GET /index.js responded 200 in 1.3530 ms
+2025-04-03 21:21:30.331 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 34.2835ms
+2025-04-03 21:21:30.347 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.4494ms
+2025-04-03 21:21:30.545 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-03 21:21:30.582 +02:00 [ERR] HTTP GET /swagger/v1/swagger.json responded 500 in 25.9915 ms
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - WHS.Application.Common.PageResult`1[WHS.Application.DTO.ShipmentDTO.ShipmentRequest.ShipmentRequestDto]. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$SortDirection" for type "$WHS.Application.Common.SortDirection". The same schemaId is already used for type "$WHS.Domain.Constants.SortDirection"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForMember(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, DataProperty dataProperty)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.CreateObjectSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.<>c__DisplayClass12_0.<GenerateConcreteSchema>b__3()
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForType(Type modelType, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreateResponseMediaType(Type modelType, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.<>c__DisplayClass42_0.<GenerateResponse>b__2(String contentType)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponse(ApiDescription apiDescription, SchemaRepository schemaRepository, String statusCode, ApiResponseType apiResponseType)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponses(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2025-04-03 21:22:36.094 +02:00 [ERR] Unhandled exception occurred. Exception: Failed to generate Operation for action - WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI). See inner exception, StackTrace:    at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at WebAPI.Middleware.RequestTimeLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Middlewares\RequestTImeLoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Middlewares\ErrorHandlingMiddleware.cs:line 20, Path: /swagger/v1/swagger.json, Method: GET
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate Operation for action - WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI). See inner exception
+ ---> Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Failed to generate schema for type - WHS.Application.Common.PageResult`1[WHS.Application.DTO.ShipmentDTO.ShipmentRequest.ShipmentRequestDto]. See inner exception
+ ---> System.InvalidOperationException: Can't use schemaId "$SortDirection" for type "$WHS.Application.Common.SortDirection". The same schemaId is already used for type "$WHS.Domain.Constants.SortDirection"
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaRepository.RegisterType(Type type, String schemaId)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForMember(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, DataProperty dataProperty)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.CreateObjectSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.<>c__DisplayClass12_0.<GenerateConcreteSchema>b__3()
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateReferencedSchema(DataContract dataContract, SchemaRepository schemaRepository, Func`1 definitionFactory)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateConcreteSchema(DataContract dataContract, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchemaForType(Type modelType, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SchemaGenerator.GenerateSchema(Type modelType, SchemaRepository schemaRepository, MemberInfo memberInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateSchema(Type type, SchemaRepository schemaRepository, PropertyInfo propertyInfo, ParameterInfo parameterInfo, ApiParameterRouteInfo routeInfo)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.CreateResponseMediaType(Type modelType, SchemaRepository schemaRespository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.<>c__DisplayClass42_0.<GenerateResponse>b__2(String contentType)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector, IEqualityComparer`1 comparer)
+   at System.Linq.Enumerable.ToDictionary[TSource,TKey,TElement](IEnumerable`1 source, Func`2 keySelector, Func`2 elementSelector)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponse(ApiDescription apiDescription, SchemaRepository schemaRepository, String statusCode, ApiResponseType apiResponseType)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateResponses(ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   --- End of inner exception stack trace ---
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository, Func`3 parametersGenerator, Func`3 bodyGenerator, Func`3 applyFilters)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationAsync(OpenApiDocument document, ApiDescription apiDescription, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperationsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository, Func`4 operationsGenerator)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePathsAsync(OpenApiDocument document, IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at WebAPI.Middleware.RequestTimeLoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Middlewares\RequestTImeLoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at WebAPI.Middleware.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Middlewares\ErrorHandlingMiddleware.cs:line 20
+2025-04-03 21:22:36.115 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 500 null application/json; charset=utf-8 65570.1879ms
+2025-04-03 21:22:45.076 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-03 21:22:45.441 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-03 21:22:45.481 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-03 21:22:45.485 +02:00 [INF] Hosting environment: Development
+2025-04-03 21:22:45.490 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-03 21:22:46.018 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-03 21:22:46.153 +02:00 [INF] HTTP GET /index.html responded 200 in 32.9547 ms
+2025-04-03 21:22:46.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-03 21:22:46.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-03 21:22:46.167 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-03 21:22:46.179 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 153.0619ms
+2025-04-03 21:22:46.205 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 39.4969ms
+2025-04-03 21:22:46.212 +02:00 [INF] HTTP GET /index.js responded 200 in 1.2417 ms
+2025-04-03 21:22:46.218 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.7806ms
+2025-04-03 21:22:46.218 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 51.154ms
+2025-04-03 21:22:46.300 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-03 21:22:46.338 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 30.6478 ms
+2025-04-03 21:22:46.342 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 42.6454ms
+2025-04-03 21:23:46.752 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/api/ShipmentRequest?PageNumber=1&PageSize=10 - null null
+2025-04-03 21:23:46.826 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI)'
+2025-04-03 21:23:46.881 +02:00 [INF] Route matched with {action = "GetAll", controller = "ShipmentRequest"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[WHS.Application.Common.PageResult`1[WHS.Application.DTO.ShipmentDTO.ShipmentRequest.ShipmentRequestDto]]] GetAll(WHS.Application.CQRS.Shipment.ShipmentRequest.Queries.GetAllShipmentRequestQuery) on controller WebAPI.Controllers.ShipmentRequestController (WebAPI).
+2025-04-03 21:23:47.511 +02:00 [INF] Getting all results
+2025-04-03 21:23:49.317 +02:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2025-04-03 21:23:49.512 +02:00 [WRN] No store type was specified for the decimal property 'CurrentUSDPrice' on entity type 'EntryDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:49.518 +02:00 [WRN] No store type was specified for the decimal property 'PriceValue' on entity type 'EntryDetailPrice'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:49.522 +02:00 [WRN] No store type was specified for the decimal property 'TotalPrice' on entity type 'ReleaseRequestDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:49.526 +02:00 [WRN] No store type was specified for the decimal property 'EruoPrice' on entity type 'ShipmentRequestDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:49.530 +02:00 [WRN] No store type was specified for the decimal property 'LocalCurrencyPrice' on entity type 'ShipmentRequestDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:49.534 +02:00 [WRN] No store type was specified for the decimal property 'USDPrice' on entity type 'ShipmentRequestDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-04-03 21:23:51.159 +02:00 [INF] Executed DbCommand (137ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [ShipmentRequests] AS [s]
+2025-04-03 21:23:51.262 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-03 21:23:51.271 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-04-03 21:23:51.507 +02:00 [INF] Executed DbCommand (79ms) [Parameters=[@__p_0='0', @__p_1='10'], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[ShipmentRequestGUID], [s].[Active], [s].[Comments], [s].[CreateDate], [s].[CreatedByUserId], [s].[ShipmentDate], [s].[ShipmentNumber], [s].[ShipmentTypeGUID], [s].[SupplierGUID], [s].[UpdateDate], [s].[UpdatedByUserId], [s].[WarehouseGUID]
+FROM [ShipmentRequests] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-04-03 21:23:51.558 +02:00 [INF] Executing OkObjectResult, writing value of type 'WHS.Application.Common.PageResult`1[[WHS.Application.DTO.ShipmentDTO.ShipmentRequest.ShipmentRequestDto, WHS.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-04-03 21:23:51.703 +02:00 [INF] Executed action WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI) in 4810.5079ms
+2025-04-03 21:23:51.709 +02:00 [INF] Executed endpoint 'WebAPI.Controllers.ShipmentRequestController.GetAll (WebAPI)'
+2025-04-03 21:23:51.716 +02:00 [INF] HTTP GET /api/ShipmentRequest responded 200 in 4943.9413 ms
+2025-04-03 21:23:51.734 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/api/ShipmentRequest?PageNumber=1&PageSize=10 - 200 null application/json; charset=utf-8 4982.3207ms

@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
-using WHS.Application.CQRS.WarehouseCQRS.Commands;
-using WHS.Application.CQRS.WarehouseCQRS.Queries;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Commands;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Queries;
 using WHS.Domain.Constants;
 using WHS.Infrastructure.Authorization;
 
@@ -14,7 +14,7 @@ namespace WebAPI.Controllers
     public class WarehouseController(IMediator mediator) : ControllerBase
     {
         [HttpGet("GetAll")]
-        //[Authorize(Policy = PolicyNames.CreatedAtleast2Restaurants)]
+        [Authorize(Policy = PolicyNames.CreatedAtleast2Warehouses)]
         [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<WarehouseDto>>> GetAll([FromQuery] GetAllWarehousesQuery query)
         {
@@ -50,7 +50,7 @@ namespace WebAPI.Controllers
         [ProducesErrorResponseType(typeof(NoContent))]
         public async Task<IActionResult> UpdateWarehouse([FromRoute] Guid id, UpdateWarehouseCommand command)
         {
-            command.WarehouseId = id;
+            command.WarehouseGUID = id;
             await mediator.Send(command);
 
             return NotFound();

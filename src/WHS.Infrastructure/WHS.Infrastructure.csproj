@@ -4,6 +4,11 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Data\old.cs" />
+	  <Compile Remove="Repositories\InventoryItemRepository.cs" />
+	  <Compile Remove="Repositories\ProductRepository.cs" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
@@ -12,12 +17,17 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="9.0.3" />
 		<PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="4.0.0" />
 	
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\WHS.Application\WHS.Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Repositories\Account\" />
 	</ItemGroup>
 
 </Project>

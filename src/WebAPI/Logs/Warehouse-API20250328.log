@@ -1,0 +1,34 @@
+2025-03-28 22:15:51.532 +01:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-03-28 22:15:51.980 +01:00 [INF] Now listening on: https://localhost:5271
+2025-03-28 22:15:52.044 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-03-28 22:15:52.046 +01:00 [INF] Hosting environment: Development
+2025-03-28 22:15:52.048 +01:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-03-28 22:15:52.792 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-03-28 22:15:52.966 +01:00 [INF] HTTP GET /index.html responded 200 in 36.8637 ms
+2025-03-28 22:15:52.976 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 192.0819ms
+2025-03-28 22:15:52.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui.css - null null
+2025-03-28 22:15:52.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-03-28 22:15:52.977 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.css - null null
+2025-03-28 22:15:53.041 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui-bundle.js - null null
+2025-03-28 22:15:53.042 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger-ui-standalone-preset.js - null null
+2025-03-28 22:15:53.058 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-03-28 22:15:53.059 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-03-28 22:15:53.082 +01:00 [INF] The file /swagger-ui-bundle.js was not modified
+2025-03-28 22:15:53.082 +01:00 [INF] The file /index.css was not modified
+2025-03-28 22:15:53.083 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 106.6725ms
+2025-03-28 22:15:53.085 +01:00 [INF] The file /swagger-ui.css was not modified
+2025-03-28 22:15:53.096 +01:00 [INF] The file /swagger-ui-standalone-preset.js was not modified
+2025-03-28 22:15:53.104 +01:00 [INF] HTTP GET /index.js responded 200 in 1.3206 ms
+2025-03-28 22:15:53.113 +01:00 [INF] HTTP GET /swagger-ui-bundle.js responded 304 in 47.1731 ms
+2025-03-28 22:15:53.114 +01:00 [INF] HTTP GET /index.css responded 304 in 32.5549 ms
+2025-03-28 22:15:53.169 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui-bundle.js - 304 null text/javascript 127.9111ms
+2025-03-28 22:15:53.172 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.css - 304 null text/css 196.2614ms
+2025-03-28 22:15:53.175 +01:00 [INF] HTTP GET /swagger-ui.css responded 304 in 90.6600 ms
+2025-03-28 22:15:53.178 +01:00 [INF] HTTP GET /swagger-ui-standalone-preset.js responded 304 in 82.6414 ms
+2025-03-28 22:15:53.183 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 133.7528ms
+2025-03-28 22:15:53.198 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui.css - 304 null text/css 222.0017ms
+2025-03-28 22:15:53.201 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger-ui-standalone-preset.js - 304 null text/javascript 159.5913ms
+2025-03-28 22:15:53.205 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 146.5862ms
+2025-03-28 22:15:53.313 +01:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-03-28 22:15:53.345 +01:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 24.5339 ms
+2025-03-28 22:15:53.350 +01:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 36.3509ms

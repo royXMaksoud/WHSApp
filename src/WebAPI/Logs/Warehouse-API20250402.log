@@ -1,0 +1,396 @@
+2025-04-02 01:17:11.175 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 01:17:11.769 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 01:17:11.847 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 01:17:11.850 +02:00 [INF] Hosting environment: Development
+2025-04-02 01:17:11.853 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 01:17:12.900 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 01:17:13.093 +02:00 [INF] HTTP GET /index.html responded 200 in 47.3944 ms
+2025-04-02 01:17:13.105 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 213.6283ms
+2025-04-02 01:17:13.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 01:17:13.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 01:17:13.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 01:17:13.133 +02:00 [INF] HTTP GET /index.js responded 200 in 1.4286 ms
+2025-04-02 01:17:13.146 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 23.4823ms
+2025-04-02 01:17:13.150 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 27.0711ms
+2025-04-02 01:17:13.169 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 46.1503ms
+2025-04-02 01:17:13.266 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 01:17:13.295 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 22.3270 ms
+2025-04-02 01:17:13.304 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.159ms
+2025-04-02 01:17:23.633 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/api/Dropdown - null null
+2025-04-02 01:17:23.705 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 01:17:23.741 +02:00 [INF] Route matched with {action = "GetDropdownValues", controller = "Dropdown"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDropdownValues() on controller WebAPI.Controllers.DropdownController (WebAPI).
+2025-04-02 01:17:24.134 +02:00 [INF] Executing OkObjectResult, writing value of type 'WHS.Domain.Entities.Out.DropdownValues'.
+2025-04-02 01:17:24.155 +02:00 [INF] Executed action WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI) in 401.9053ms
+2025-04-02 01:17:24.159 +02:00 [INF] Executed endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 01:17:24.162 +02:00 [INF] HTTP GET /api/Dropdown responded 200 in 516.4005 ms
+2025-04-02 01:17:24.169 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/api/Dropdown - 200 null application/json; charset=utf-8 535.7557ms
+2025-04-02 01:17:37.105 +02:00 [INF] Request starting HTTP/2 POST https://localhost:5271/api/Dropdown/refresh-cache - null 0
+2025-04-02 01:17:37.118 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.DropdownController.RefreshCache (WebAPI)'
+2025-04-02 01:17:37.129 +02:00 [INF] Route matched with {action = "RefreshCache", controller = "Dropdown"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RefreshCache() on controller WebAPI.Controllers.DropdownController (WebAPI).
+2025-04-02 01:27:56.345 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 01:27:56.855 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 01:27:56.902 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 01:27:56.905 +02:00 [INF] Hosting environment: Development
+2025-04-02 01:27:56.908 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 01:27:57.599 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 01:27:57.757 +02:00 [INF] HTTP GET /index.html responded 200 in 34.5821 ms
+2025-04-02 01:27:57.769 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 173.7284ms
+2025-04-02 01:27:57.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 01:27:57.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 01:27:57.771 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 01:27:57.798 +02:00 [INF] HTTP GET /index.js responded 200 in 1.6300 ms
+2025-04-02 01:27:58.970 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 1200.0757ms
+2025-04-02 01:27:58.971 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 1201.744ms
+2025-04-02 01:27:58.993 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 1221.6653ms
+2025-04-02 01:27:59.050 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 01:27:59.090 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 32.6341 ms
+2025-04-02 01:27:59.095 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 45.3357ms
+2025-04-02 01:28:06.727 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/api/Dropdown - null null
+2025-04-02 01:28:06.789 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 01:28:06.838 +02:00 [INF] Route matched with {action = "GetDropdownValues", controller = "Dropdown"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDropdownValues() on controller WebAPI.Controllers.DropdownController (WebAPI).
+2025-04-02 01:29:12.587 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 01:29:12.953 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 01:29:12.992 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 01:29:12.994 +02:00 [INF] Hosting environment: Development
+2025-04-02 01:29:12.996 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 01:29:14.211 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 01:29:14.343 +02:00 [INF] HTTP GET /index.html responded 200 in 32.8172 ms
+2025-04-02 01:29:14.353 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 144.5268ms
+2025-04-02 01:29:14.358 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 01:29:14.362 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 01:29:14.387 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 01:29:14.401 +02:00 [INF] HTTP GET /index.js responded 200 in 0.6714 ms
+2025-04-02 01:29:14.417 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 59.1938ms
+2025-04-02 01:29:14.417 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 59.9184ms
+2025-04-02 01:29:14.449 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 91.6531ms
+2025-04-02 01:29:14.497 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 01:29:14.526 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 22.1022 ms
+2025-04-02 01:29:14.530 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.981ms
+2025-04-02 01:29:23.227 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/api/Dropdown - null null
+2025-04-02 01:29:23.268 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 01:29:23.292 +02:00 [INF] Route matched with {action = "GetDropdownValues", controller = "Dropdown"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDropdownValues() on controller WebAPI.Controllers.DropdownController (WebAPI).
+2025-04-02 01:37:19.028 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 01:37:19.382 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 01:37:19.421 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 01:37:19.423 +02:00 [INF] Hosting environment: Development
+2025-04-02 01:37:19.425 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 01:37:19.931 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 01:37:20.073 +02:00 [INF] HTTP GET /index.html responded 200 in 34.0236 ms
+2025-04-02 01:37:20.084 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 157.81ms
+2025-04-02 01:37:20.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 01:37:20.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 01:37:20.113 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 01:37:20.142 +02:00 [INF] HTTP GET /index.js responded 200 in 1.3630 ms
+2025-04-02 01:37:20.147 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 35.039ms
+2025-04-02 01:37:20.150 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 38.6768ms
+2025-04-02 01:37:20.160 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.7705ms
+2025-04-02 01:37:20.246 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 01:37:20.272 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 19.0948 ms
+2025-04-02 01:37:20.276 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 30.1724ms
+2025-04-02 02:04:44.881 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 02:04:45.402 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 02:04:45.449 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 02:04:45.451 +02:00 [INF] Hosting environment: Development
+2025-04-02 02:04:45.453 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 02:04:46.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 02:04:46.374 +02:00 [INF] HTTP GET /index.html responded 200 in 40.0975 ms
+2025-04-02 02:04:46.383 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 175.9718ms
+2025-04-02 02:04:46.388 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 02:04:46.388 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 02:04:46.390 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 02:04:46.407 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 19.3563ms
+2025-04-02 02:04:46.411 +02:00 [INF] HTTP GET /index.js responded 200 in 1.0102 ms
+2025-04-02 02:04:46.421 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 32.7706ms
+2025-04-02 02:04:46.431 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.2013ms
+2025-04-02 02:04:46.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 02:04:46.733 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 18.4686 ms
+2025-04-02 02:04:46.742 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 33.1891ms
+2025-04-02 02:05:27.988 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/api/Dropdown - null null
+2025-04-02 02:05:28.065 +02:00 [INF] Executing endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 02:05:28.096 +02:00 [INF] Route matched with {action = "GetDropdownValues", controller = "Dropdown"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetDropdownValues() on controller WebAPI.Controllers.DropdownController (WebAPI).
+2025-04-02 02:05:28.327 +02:00 [INF] Action WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI) executed in 0.219 seconds.
+2025-04-02 02:05:35.135 +02:00 [INF] Executing OkObjectResult, writing value of type 'WHS.Domain.Entities.NotMapped.DropdownValues'.
+2025-04-02 02:05:35.146 +02:00 [INF] Executed action WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI) in 7043.074ms
+2025-04-02 02:05:35.147 +02:00 [INF] Executed endpoint 'WebAPI.Controllers.DropdownController.GetDropdownValues (WebAPI)'
+2025-04-02 02:05:35.148 +02:00 [INF] HTTP GET /api/Dropdown responded 200 in 7121.5046 ms
+2025-04-02 02:05:35.150 +02:00 [INF] Request GET ast /api/Dropdown took 7122 ms
+2025-04-02 02:05:35.153 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/api/Dropdown - 200 null application/json; charset=utf-8 7164.8778ms
+2025-04-02 09:23:58.176 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 09:23:58.734 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 09:23:58.783 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 09:23:58.786 +02:00 [INF] Hosting environment: Development
+2025-04-02 09:23:58.788 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 09:24:00.526 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 09:24:00.710 +02:00 [INF] HTTP GET /index.html responded 200 in 48.1510 ms
+2025-04-02 09:24:00.720 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 198.1365ms
+2025-04-02 09:24:00.723 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 09:24:00.723 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 09:24:00.732 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 09:24:00.742 +02:00 [INF] HTTP GET /index.js responded 200 in 1.3109 ms
+2025-04-02 09:24:00.782 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 59.2637ms
+2025-04-02 09:24:00.782 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 58.9901ms
+2025-04-02 09:24:00.811 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.8237ms
+2025-04-02 09:24:00.875 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 09:24:00.906 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 25.0920 ms
+2025-04-02 09:24:00.913 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 37.9085ms
+2025-04-02 10:17:49.650 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 10:17:50.210 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 10:17:50.262 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 10:17:50.265 +02:00 [INF] Hosting environment: Development
+2025-04-02 10:17:50.268 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 10:17:51.627 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 10:17:51.868 +02:00 [INF] HTTP GET /index.html responded 200 in 41.7093 ms
+2025-04-02 10:17:51.878 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 257.059ms
+2025-04-02 10:17:51.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 10:17:51.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 10:17:51.926 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 10:17:51.943 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 58.007ms
+2025-04-02 10:17:51.992 +02:00 [INF] HTTP GET /index.js responded 200 in 2.2724 ms
+2025-04-02 10:17:51.999 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 76.7018ms
+2025-04-02 10:17:52.018 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.0144ms
+2025-04-02 10:17:52.177 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 10:17:52.204 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 22.1397 ms
+2025-04-02 10:17:52.208 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 31.2964ms
+2025-04-02 10:34:04.048 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 10:34:04.432 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 10:34:04.493 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 10:34:04.494 +02:00 [INF] Hosting environment: Development
+2025-04-02 10:34:04.497 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 10:34:05.890 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 10:34:06.125 +02:00 [INF] HTTP GET /index.html responded 200 in 52.4663 ms
+2025-04-02 10:34:06.137 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 254.6098ms
+2025-04-02 10:34:06.140 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 10:34:06.140 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 10:34:06.141 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 10:34:06.170 +02:00 [INF] HTTP GET /index.js responded 200 in 1.5533 ms
+2025-04-02 10:34:06.171 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 32.3377ms
+2025-04-02 10:34:06.177 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 38.0765ms
+2025-04-02 10:34:06.184 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 45.7386ms
+2025-04-02 10:34:06.446 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 10:34:06.480 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 26.0146 ms
+2025-04-02 10:34:06.484 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 38.8793ms
+2025-04-02 13:21:22.957 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 13:21:23.541 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 13:21:23.595 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 13:21:23.597 +02:00 [INF] Hosting environment: Development
+2025-04-02 13:21:23.599 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 13:21:24.374 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 13:21:24.559 +02:00 [INF] HTTP GET /index.html responded 200 in 36.5455 ms
+2025-04-02 13:21:24.568 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 198.4959ms
+2025-04-02 13:21:24.614 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 13:21:24.616 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 13:21:24.616 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 13:21:24.695 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 81.5246ms
+2025-04-02 13:21:24.695 +02:00 [INF] HTTP GET /index.js responded 200 in 8.5053 ms
+2025-04-02 13:21:24.713 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 96.8744ms
+2025-04-02 13:21:24.736 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 119.3322ms
+2025-04-02 13:21:24.807 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 13:21:24.836 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 21.0415 ms
+2025-04-02 13:21:24.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.4434ms
+2025-04-02 13:51:18.686 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:51:38.297 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:51:57.076 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:55:28.646 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:55:39.481 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:56:03.662 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:56:19.267 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 13:56:19.790 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 13:56:19.842 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 13:56:19.846 +02:00 [INF] Hosting environment: Development
+2025-04-02 13:56:19.851 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 13:56:20.881 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 13:56:21.177 +02:00 [INF] HTTP GET /index.html responded 200 in 32.8775 ms
+2025-04-02 13:56:21.186 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 315.5819ms
+2025-04-02 13:56:21.198 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 13:56:21.198 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 13:56:21.198 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 13:56:21.218 +02:00 [INF] HTTP GET /index.js responded 200 in 2.1517 ms
+2025-04-02 13:56:21.231 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 33.7774ms
+2025-04-02 13:56:21.232 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 34.4565ms
+2025-04-02 13:56:21.259 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 61.5296ms
+2025-04-02 13:56:21.355 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 13:56:21.394 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 32.4794 ms
+2025-04-02 13:56:21.399 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 44.5031ms
+2025-04-02 13:56:33.080 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:57:09.599 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:57:26.536 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:57:36.460 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 13:57:43.641 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:00:21.677 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:00:40.893 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:00:52.916 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:01:38.176 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:01:49.239 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 14:01:59.555 +02:00 [FTL] Application startup failed
+Microsoft.Extensions.Hosting.HostAbortedException: The host was aborted.
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.ThrowHostAborted()
+   at Microsoft.Extensions.Hosting.HostFactoryResolver.HostingListener.OnNext(KeyValuePair`2 value)
+   at System.Diagnostics.DiagnosticListener.Write(String name, Object value)
+   at Microsoft.Extensions.Hosting.HostBuilder.ResolveHost(IServiceProvider serviceProvider, DiagnosticListener diagnosticListener)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI\Program.cs:line 18
+2025-04-02 21:49:15.850 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 21:49:17.065 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 21:49:17.247 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 21:49:17.256 +02:00 [INF] Hosting environment: Development
+2025-04-02 21:49:17.264 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 21:49:21.227 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 21:49:21.857 +02:00 [INF] HTTP GET /index.html responded 200 in 194.6893 ms
+2025-04-02 21:49:21.879 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 667.2758ms
+2025-04-02 21:49:21.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 21:49:21.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 21:49:21.894 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 21:49:21.916 +02:00 [INF] HTTP GET /index.js responded 200 in 3.0695 ms
+2025-04-02 21:49:21.939 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 47.3744ms
+2025-04-02 21:49:21.941 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 49.0663ms
+2025-04-02 21:49:22.009 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 117.6143ms
+2025-04-02 21:49:22.172 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 21:49:22.288 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 99.2409 ms
+2025-04-02 21:49:22.297 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 125.0305ms
+2025-04-02 22:55:00.141 +02:00 [INF] User profile is available. Using 'C:\Users\HCES\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-04-02 22:55:00.920 +02:00 [INF] Now listening on: https://localhost:5271
+2025-04-02 22:55:00.974 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-04-02 22:55:00.977 +02:00 [INF] Hosting environment: Development
+2025-04-02 22:55:00.979 +02:00 [INF] Content root path: C:\Asp.Net_Project\WarehouseApp\WHS\src\WebAPI
+2025-04-02 22:55:03.123 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.html - null null
+2025-04-02 22:55:03.307 +02:00 [INF] HTTP GET /index.html responded 200 in 35.7618 ms
+2025-04-02 22:55:03.318 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.html - 200 null text/html;charset=utf-8 200.1655ms
+2025-04-02 22:55:03.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_vs/browserLink - null null
+2025-04-02 22:55:03.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - null null
+2025-04-02 22:55:03.324 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/index.js - null null
+2025-04-02 22:55:03.387 +02:00 [INF] HTTP GET /index.js responded 200 in 1.3933 ms
+2025-04-02 22:55:03.389 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_framework/aspnetcore-browser-refresh.js - 200 16497 application/javascript; charset=utf-8 65.261ms
+2025-04-02 22:55:03.397 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/index.js - 200 null application/javascript;charset=utf-8 73.559ms
+2025-04-02 22:55:03.412 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/_vs/browserLink - 200 null text/javascript; charset=UTF-8 88.6012ms
+2025-04-02 22:55:03.483 +02:00 [INF] Request starting HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - null null
+2025-04-02 22:55:03.512 +02:00 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 20.8747 ms
+2025-04-02 22:55:03.516 +02:00 [INF] Request finished HTTP/2 GET https://localhost:5271/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 32.8232ms

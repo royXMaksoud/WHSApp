@@ -3,9 +3,10 @@ using FluentAssertions;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Threading.Tasks;
+using WHS.Application.CQRS.Code.WarehouseCQRS.Commands;
 using WHS.Domain.Entities.Code;
 using WHS.Domain.Exceptions;
-using WHS.Domain.Repositories;
+using WHS.Domain.Repositories.Code;
 using WHS.Domin.Constants;
 using WHS.Domin.Services;
 using Xunit;
@@ -17,14 +18,15 @@ public class UpdateWarehouseCommandHandlerTests
     private readonly Mock<ILogger<UpdateWarehouseCommandHandler>> _loggerMock;
     private readonly Mock<IWarehouseRepository> _WarehousesRepositoryMock;
     private readonly Mock<IMapper> _mapperMock;
-    private readonly Mock<IWarehouseAuthorizationService> _WarehouseAuthorizationServiceMock;
+    private readonly Mock<IAuthorizationService<Warehouse>> _WarehouseAuthorizationServiceMock; // Updated line
+
     private readonly UpdateWarehouseCommandHandler _handler;
     public UpdateWarehouseCommandHandlerTests()
     {
         _loggerMock = new Mock<ILogger<UpdateWarehouseCommandHandler>>();
         _WarehousesRepositoryMock = new Mock<IWarehouseRepository>();
         _mapperMock = new Mock<IMapper>();
-        _WarehouseAuthorizationServiceMock = new Mock<IWarehouseAuthorizationService>();
+        _WarehouseAuthorizationServiceMock = new Mock<IAuthorizationService<Warehouse>>();
 
         _handler = new UpdateWarehouseCommandHandler(
             _loggerMock.Object,
@@ -39,13 +41,13 @@ public class UpdateWarehouseCommandHandlerTests
         var warehouseId = Guid.Parse("09907266-9bc0-4435-89c3-001dfe15a7d1");
         var command = new UpdateWarehouseCommand()
         {
-            WarehouseId = warehouseId,
+            WarehouseGUID = warehouseId,
             WarehouseName = "Hamburg",
 
         };
         var warehouse = new Warehouse()
         {
-            WarehouseId = warehouseId,
+            WarehouseGUID = warehouseId,
             WarehouseName = "Central Warehouse"
         };
 
@@ -68,7 +70,7 @@ public class UpdateWarehouseCommandHandlerTests
         var warehouseId = Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db");
         var command = new UpdateWarehouseCommand
             {
-                WarehouseId = warehouseId
+                WarehouseGUID = warehouseId
             };
         
         _WarehousesRepositoryMock.Setup(x=>x.GetByIdAsync(warehouseId)).ReturnsAsync((Warehouse?)null);//return null 
@@ -88,11 +90,12 @@ public class UpdateWarehouseCommandHandlerTests
         var warehouseId = Guid.Parse("d13e32ae-8fae-4e54-b217-0003048c27db");
         var request = new UpdateWarehouseCommand
         {
-            WarehouseId = warehouseId
+            WarehouseGUID= warehouseId
         };
         var existingWarehouse = new Warehouse()
         {
-            WarehouseId = warehouseId,
+            WarehouseGUID = warehouseId,
+            WarehouseName="test"
          
         };
         _WarehousesRepositoryMock.Setup(x => x.GetByIdAsync(warehouseId)).ReturnsAsync(existingWarehouse);

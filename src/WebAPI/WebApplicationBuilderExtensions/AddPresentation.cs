@@ -1,7 +1,9 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.Extensions.Caching.Memory;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
 using WebAPI.Middleware;
+using WHS.Application.Filters;
 
 namespace WebAPI.WebApplicationBuilderExtensions
 {
@@ -35,6 +37,11 @@ namespace WebAPI.WebApplicationBuilderExtensions
 
             builder.Services.AddScoped<ErrorHandlingMiddleware>();
             builder.Services.AddScoped<RequestTimeLoggingMiddleware>();
+            builder.Services.AddMemoryCache();
+            builder.Services.AddScoped<LogActionFilter>();
+
+            builder.Services.AddControllersWithViews();
+
 
             builder.Host.UseSerilog((context, configuration) =>
                 configuration

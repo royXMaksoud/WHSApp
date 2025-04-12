@@ -2,6 +2,7 @@
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
 using WHS.Application.UserAuth;
+using WHS.Domain.Repositories.Dropdown;
 
 namespace WHS.Application.Extensions
 {
@@ -19,6 +20,7 @@ namespace WHS.Application.Extensions
                 .AddFluentValidationAutoValidation();
 
             services.AddScoped<IUserContext, UserContext>();
+     
 
             services.AddHttpContextAccessor();
         }

@@ -1,14 +1,18 @@
-﻿namespace WHS.Domain.Entities.Code
+﻿using System.ComponentModel.DataAnnotations;
+using WHS.Domain.Entities.Shipment;
+
+namespace WHS.Domain.Entities.Code
 {
     public class CountryLocation
     {
-        public Guid LocationId { get; set; } // Primary Key
-        public Guid CountryId { get; set; } // Foreign Key to Country
+        [Key]
+        public Guid LocationGUID { get; set; } // Primary Key
+        public Guid CountryGUID { get; set; } // Foreign Key to Country
         public required string LocationName { get; set; }
 
         // Navigation Property
         public required Country Country { get; set; }
 
-        public required ICollection<Warehouse> Warehouses { get; set; }  // Related Warehouses
+        public required ICollection<Supplier> Suppliers { get; set; }  // Related Suppliers
     }
 }

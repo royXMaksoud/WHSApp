@@ -10,9 +10,9 @@ namespace WHS.Domain.Entities.Code
     public class CodeTableValue
     {
         [Key]
-        public Guid TableValueId { get; set; } // Primary Key
+        public Guid TableValueGUID { get; set; } // Primary Key
         public required string ValueName { get; set; }
-        public Guid TableId { get; set; } // Foreign Key to Organization
+        public Guid TableGUID { get; set; } // Foreign Key to Organization
 
         public bool Active { get; set; }
 

@@ -1,14 +1,17 @@
-﻿namespace WHS.Domain.Entities.Code
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WHS.Domain.Entities.Code
 {
     public class DutyStation
     {
-        public Guid DutyStationId { get; set; } // Primary Key
+        [Key]
+        public Guid DutyStationGUID { get; set; } // Primary Key
         public required string DutyStationName { get; set; }
-        public Guid OrganizationId { get; set; } // Foreign Key to Organization
+        public Guid InstitutionGUID { get; set; } // Foreign Key to Organization
 
         // Navigation Properties
-        public required Organization Organization { get; set; }
+        public required InstitutionByCountry InstitutionByCountry { get; set; }
 
-        public required ICollection<Warehouse> Warehouses { get; set; }
+        public required ICollection<Warehouse> Warehouses { get; set; } = [];
     }
 }
