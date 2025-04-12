@@ -1,9 +1,6 @@
-name: warehouses-api
+name: warehouses-api-ci
 
 on:
-  push:
-    branches: 
-      - master
   pull_request:
     branches:
       - master
